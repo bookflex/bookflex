@@ -15,6 +15,7 @@ const App = () => (
       <Route exact path="/" component={MainPage}/>
       <Route path="/recommendations" component={RecommendationPage}/>
     </div>
+
   </Router>
 );
 
