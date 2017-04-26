@@ -16,5 +16,5 @@ app.get('/', function (req, res) {
 });
 
 app.listen(3001, () => {
-  console.log('Bookflex-server is listening on port 3000');
+  console.log('Bookflex-server is listening on port 3001');
 })
