@@ -26,15 +26,15 @@ const element = bookData.map( (v,i) => {
 
 ReactDOM.render(
 
-  <div>Hello    
+  {/*<div>Hello    
     <ol>
       {element}
     </ol>
-</div>
+</div>*/}
 
-  // <Provider store={store}>
-  //  {/*<App />*/}
+  <Provider store={store}>
+   <App />
     
-  // </Provider>,
+  </Provider>,
   ,document.getElementById('root')
 );
