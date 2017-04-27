@@ -5,16 +5,18 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import { fetchData } from '../actions'
+import BookList from '../components/BookList';
 
 class MainPage extends Component {
 
-  componentWillMount() {
-    this.props.fetchData();
-  }
+  // componentWillMount() {
+  //   this.props.fetchData();
+  // }
 
   render() {
     return (
       <div>
+        <BookList />
       </div>
     );
   }

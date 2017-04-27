@@ -7,8 +7,16 @@ import Rating from './Rating';
 
 export default class Book extends Component {
   render() {
+    console.log(this.props.book);
+    const { title, description, author,
+      coverLargeUrl, isbn, customerReviewRank,
+      priceStandard } = this.props.book;
+
     return (
-      <div>
+      <div className="book">
+        <div className="title">{title}</div>
+        <img src={coverLargeUrl} className="bookImg"/>
+        <div className="description">{description}</div>
         <Rating />
       </div>
     );
