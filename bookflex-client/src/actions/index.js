@@ -17,10 +17,22 @@ export function searchBook(bookTitle) {
 
     fetchJsonp(url)
       .then(response => response.json())
-      .then(json => dispatch({
+      .then(json => {
+        // draw screen
+        dispatch({
           type: 'SEARCHED_BOOKS',
           payload: json.item
-        }));
+        });
+
+        // insert db
+        fetch('http://localhost:3001/books/', {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+          body: JSON.stringify(json.item)
+        })
+      });
 
   }
 }
