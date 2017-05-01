@@ -1,9 +1,9 @@
 /**
  * Created by Joy on 2017. 5. 1..
  */
-const mysql = require('mysql');
+import mysql from 'mysql';
 
-const env = require('../config/index');
+import env from '../config/index';
 import MysqlWrapper from './MysqlWrapper';
 
 const connection = mysql.createConnection({

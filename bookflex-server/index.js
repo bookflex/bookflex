@@ -1,8 +1,9 @@
 /**
  * Created by Joy on 2017. 4. 16..
  */
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
+
 import model from './model';
 import router from './routes';
 
