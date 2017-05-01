@@ -20,13 +20,13 @@ class Ranking extends Component {
     console.log(temp);
     return (
       <div className="rankList">
-        rankList
-        <Rank />
-        {/*{this.props.bestsellerBookList.map((rank) => {
-          return (
-            <Rank key={rank.isbn} rank={rank} className="rank" />
-          )
-        })}*/}
+        <ol>
+          {this.props.bestsellerBookList.map((bestseller)=>{
+            return(
+              <li>{bestseller.title}</li>
+            )
+          })}
+        </ol>
       </div>
     );
   }

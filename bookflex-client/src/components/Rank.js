@@ -8,14 +8,12 @@ import Rating from './Rating';
 
 class Rank extends Component {
   render() {
-    debugger;
-    // console.log(this.props.rank);
-    // const temp = this.props.bestsellerBookList;
-    // console.log(temp);
+    // debugger;
+    const {title} = this.props.bestseller;
 
     return (
       <div className="rank">
-          rank
+        <li>{title}</li>
         {/*<div className="title">{title}</div>
         <img src={coverLargeUrl} className="bookImg"/>
         <div className="description">{description}</div>

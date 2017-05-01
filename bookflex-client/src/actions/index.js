@@ -33,7 +33,7 @@ export function getBestSeller() {
     .then(response => response.json())
     .then(json => dispatch({
       type: 'BESTSELLER_BOOKS',
-      payload: json
+      payload: json.item
     }));
   }
 }
