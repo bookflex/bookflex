@@ -4,29 +4,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import Rating from './Rating';
 
-class Rank extends Component {
+export default class Rank extends Component {
   render() {
     // debugger;
-    const {title} = this.props.bestseller;
-
+    const {title, link} = this.props.bestseller;
+    console.log(title)
     return (
       <div className="rank">
-        <li>{title}</li>
-        {/*<div className="title">{title}</div>
-        <img src={coverLargeUrl} className="bookImg"/>
-        <div className="description">{description}</div>
-        <Rating />*/}
+        <li><a href={link}>{title}</a></li>
       </div>
     );
   }
 }
-
-// function mapStateToProps(state) {
-//   return {
-//     bestsellerBookList: state.bestseller.bestsellerBookList
-//   };
-// }
-
-// export default connect(mapStateToProps)(Rank);

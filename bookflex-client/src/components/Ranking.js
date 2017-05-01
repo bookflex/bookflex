@@ -17,13 +17,13 @@ class Ranking extends Component {
     const temp = this.props.bestsellerBookList;
     debugger;
 
-    console.log(temp);
+    // console.log(temp);
     return (
       <div className="rankList">
         <ol>
           {this.props.bestsellerBookList.map((bestseller)=>{
             return(
-              <li>{bestseller.title}</li>
+              <Rank key={bestseller.rank} bestseller={bestseller} />
             )
           })}
         </ol>
@@ -40,14 +40,10 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-// export default connect(null, mapDispatchToProps)(Ranking);
-
 function mapStateToProps(state) {
   return {
     bestsellerBookList: state.bestseller.bestsellerBookList
   };
 }
-
-// export default connect(mapStateToProps)(Rank);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Ranking);
