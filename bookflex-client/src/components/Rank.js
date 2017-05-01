@@ -2,15 +2,16 @@
  * Created by hwigyum on 2017. 4. 27..
  */
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import Rating from './Rating';
 
-export default class Rank extends Component {
+class Rank extends Component {
   render() {
+    debugger;
     // console.log(this.props.rank);
-    // const { title, description, author,
-    //   coverLargeUrl, isbn, customerReviewRank,
-    //   priceStandard } = this.props.book;
+    // const temp = this.props.bestsellerBookList;
+    // console.log(temp);
 
     return (
       <div className="rank">
@@ -23,3 +24,11 @@ export default class Rank extends Component {
     );
   }
 }
+
+// function mapStateToProps(state) {
+//   return {
+//     bestsellerBookList: state.bestseller.bestsellerBookList
+//   };
+// }
+
+// export default connect(mapStateToProps)(Rank);

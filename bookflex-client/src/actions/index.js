@@ -31,10 +31,9 @@ export function getBestSeller() {
 
     fetchJsonp(url)
     .then(response => response.json())
-    .then(json => console.log(json))
     .then(json => dispatch({
       type: 'BESTSELLER_BOOKS',
-      payload: json.item
+      payload: json
     }));
   }
 }
