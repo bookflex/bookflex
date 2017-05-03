@@ -19,6 +19,8 @@ Cheerio는 전달 받은 웹 데이타를 JQuery와 동일한 문법을 이용�
 
 ```javascript
 var $ = cheerio.load(body)
+//예제 
+$('.detail_info > h3 > a')
 ```
 다음은 JQuery 문법을 사용하여 원하는 element를 지정하면 된다. 
 
