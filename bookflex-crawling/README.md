@@ -2,9 +2,9 @@ Web Scraping (크롤링)은 인터넷에 있는 정보를 수집하는 작업을
 
 먼저 다음 npm 을 설치하라 (cheerio, express, request)
 
-npm install cheerio --save
-npm install express --save
-npm install request --save
+- npm install cheerio --save
+- npm install express --save
+- npm install request --save
 
 #### Request
 ```javascript
