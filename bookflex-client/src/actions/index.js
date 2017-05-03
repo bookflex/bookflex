@@ -37,6 +37,19 @@ export function searchBook(bookTitle) {
   }
 }
 
+export function getBestSeller() {
+  return(dispatch, getState) => {
+    const url = `${config.BESTSELLER_API_URI}?key=${config.BESTSELLER_API_KEY}&categoryId=100&output=json`;
+
+    fetchJsonp(url)
+    .then(response => response.json())
+    .then(json => dispatch({
+      type: 'BESTSELLER_BOOKS',
+      payload: json.item
+    }));
+  }
+}
+
 export const onClickTab = (key) => {
   return {
     type: "CLICK_TAB",
