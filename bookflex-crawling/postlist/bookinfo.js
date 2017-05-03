@@ -17,11 +17,13 @@ function _promiseAll(){
                     let title = $('.h').children().first().text();
                     let author = $('.info_lst > li > a').eq(0).text();
                     let releaseDate = $('.info_lst').children().last().text();
+                    let content = $('#bookIntroSimple').text();
                     resolve({
                         imgurl,
                         title,
                         author,
-                        releaseDate
+                        releaseDate,
+                        content
                     });
             
                 }else{
