@@ -5,12 +5,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import Book from './Book';
+import Ranking from '../components/Ranking';
 
 class BestsellerList extends Component {
   render() {
     return (
       <div className="bestsellerList">
-        {/*추후 ranking component 넣기*/}
+        <Ranking />
         <div className="books">
           {this.props.bestsellerBookList.map((book) => {
             return (

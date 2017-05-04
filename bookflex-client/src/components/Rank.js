@@ -7,7 +7,6 @@ import {connect} from 'react-redux';
 
 export default class Rank extends Component {
   render() {
-    // debugger;
     const {title, link} = this.props.bestseller;
     return (
       <div className="rank">
