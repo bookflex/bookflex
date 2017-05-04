@@ -20,8 +20,20 @@ const getBooksByUserId = (userId) => {
   return mysqlWrapper.execute(`SELECT b.* FROM Books b INNER JOIN BookUserMap bu ON b.bookId = bu.bookId WHERE bu.userId = ${userId}`);
 };
 
+const insertEachBookInfo = (book) => {
+  return mysqlWrapper.execute(`SELECT isbn FROM Books WHERE Books.isbn = '${book.isbn}'`).then(result => {
+    if(result.length === 0) {
+      const query = `INSERT INTO Books(title, description, author, isbn, coverLargeUrl, customerReviewRank, standardPrice, saledPrice) 
+        VALUES ('${book.title}', '${book.description}', '${book.author}', '${book.isbn}',
+         '${book.coverLargeUrl}', ${book.customerReviewRank}, ${book.priceStandard}, ${book.priceSales})`;
+      console.log('query', query);
+      return mysqlWrapper.execute(query);
+    }
+  });
+}
+
 export default {
-  connection, getBooksByUserId
+  connection, getBooksByUserId, insertEachBookInfo
 }
 
 
