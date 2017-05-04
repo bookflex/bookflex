@@ -27,7 +27,7 @@ function _promiseAll(){
                     });
             
                 }else{
-                    reject(err)
+                    reject(error)
                 }
 
             })
@@ -38,11 +38,11 @@ function _promiseAll(){
 app.get('/books', function(req, res) {
     Promise.all( _promiseAll()).then((results)=>{
         console.log(results);
-         fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
+        fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
     });
 });
 
-// 콜백헬 
+//콜백헬 
 // var json = [];
 
 // app.get('/books', function(req, res) {
@@ -50,15 +50,19 @@ app.get('/books', function(req, res) {
 //         var url = 'http://m.book.naver.com' + URL[i].bookurl;
 
 //         request(url, function(error, response, body) {
-            
+//             console.log('check');
 //             if (!error && response.statusCode == 200) {
 //                 var $ = cheerio.load(body);
 //                 var imgurl = $('.flexible2').attr('src');
 //                 json.push({imgurl});
-//                 console.log(json)
-//                 //fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(json, null, 5));
-//             }
-             
+//                 //console.log('check')
+//                 fs.appendFile('./JSON/bookinfo.json', JSON.stringify(json, null, 5), function(err) {
+//                     if (err) {
+//                         console.log(err)
+//                     }
+//                     //console.log('Saved!')
+//                 });
+//             }  
 //         })
       
 //     }

@@ -8,15 +8,18 @@ app.get('/scrape', function(req, res) {
 url = "http://m.book.naver.com/bestsell/list_ajax.nhn";
 
 request(url, function(error, response, body) {
+        var bookurl;
         var json = [];
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(body);
             $('.detail_info > h3 > a').each(function(i, element) {
                 var link = $(this);
-                var bookurl = link.attr('href');
+                bookurl = link.attr('href');
                 json.push({bookurl});
             })
-            fs.appendFileSync('./JSON/bookurl.json', JSON.stringify(json, null, 5));
+            if (json.bookurl != bookurl) {
+                fs.appendFileSync('./JSON/bookurl.json', JSON.stringify(json, null, 5)); 
+            }     
          }
     })
     res.send("<h1>asdfasdf</h1>");
