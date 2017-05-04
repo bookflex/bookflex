@@ -49,7 +49,7 @@ export function fetchBestseller() {
 export function fetchMainPage() {
   return (dispatch) => {
     dispatch(fetchBestseller());
-  }
+  };
 }
 
 export const onClickTab = (key) => {
