@@ -5,9 +5,7 @@ const initialStates = {
   bestsellerBookList: []
 };
 
-debugger;
 export default function (state = initialStates, action) {
-  debugger;
   switch(action.type) {
     case 'BESTSELLER_BOOKS':
       return {

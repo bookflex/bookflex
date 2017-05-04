@@ -25,7 +25,7 @@ class BestsellerList extends Component {
 
 function mapStateToProps(state) {
   return {
-    bestsellerBookList: state.books.bestsellerBookList
+    bestsellerBookList: state.bestseller.bestsellerBookList
   };
 }
 
