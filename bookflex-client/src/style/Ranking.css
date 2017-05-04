@@ -1,0 +1,12 @@
+.rankList{
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 1px solid #000;
+}
+
+.rank{
+    position: relative;
+    border: 1px solid powderblue;
+    width: 100%;
+}
