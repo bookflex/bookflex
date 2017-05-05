@@ -1,11 +1,8 @@
-/**
- * Created by Joy on 2017. 4. 26..
- */
 const initialStates = {
   bookList: [],
   searchedBookList: [],
   selectedBook: null,
-  bestsellerBookList: []
+  bestsellerBookList: [],
 };
 
 export default function (state = initialStates, action) {
@@ -13,13 +10,14 @@ export default function (state = initialStates, action) {
     case 'SEARCHED_BOOKS':
       return {
         ...state,
-        searchedBookList: action.payload
+        searchedBookList: action.payload,
       };
     case 'BESTSELLER_BOOKS':
       return {
         ...state,
-        bestsellerBookList: action.payload
+        bestsellerBookList: action.payload,
       };
   }
+
   return state;
 }
