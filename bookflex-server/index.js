@@ -1,8 +1,11 @@
 /**
  * Created by Joy on 2017. 4. 16..
  */
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
 import model from './model';
 import router from './routes';
 
@@ -14,6 +17,9 @@ model.connection.connect();
 
 app.set('view engine', 'html');
 app.use(express.static(staticPath));
+app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '5mb' }));
 app.use('/', router);
 
 app.listen(3001, () => {
