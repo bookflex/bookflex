@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    bestsellerBookList: state.bestseller.bestsellerBookList
+    bestsellerBookList: state.books.bestsellerBookList
   };
 }
 
