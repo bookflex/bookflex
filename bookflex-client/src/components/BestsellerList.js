@@ -12,12 +12,11 @@ class BestsellerList extends Component {
     return (
       <div className="bestsellerList">
         <Ranking />
-        <div className="books">
-          {this.props.bestsellerBookList.map((book) => {
+        <div className="bestsellers">
+          {this.props.books.map((book) => {
             return (
               <Book key={book.isbn} book={book}/>
-            )
-          })}
+            )})}
         </div>
       </div>
     );
@@ -26,9 +25,8 @@ class BestsellerList extends Component {
 
 function mapStateToProps(state) {
   return {
-    bestsellerBookList: state.bestseller.bestsellerBookList
+    bestsellerBookList: state.books.bestsellerBookList
   };
 }
-
 
 export default connect(mapStateToProps)(BestsellerList);

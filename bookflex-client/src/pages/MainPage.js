@@ -17,6 +17,7 @@ class MainPage extends Component {
     return (
       <div>
         <BestsellerList />
+        {/* must attach PostList and GenreList*/}
       </div>
     );
   }
