@@ -1,20 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 
 import Book from './Book';
 
-const { arrayOf, object } = PropTypes;
-
 const BookList = ({ searchedBookList }) =>
   <div className="bookList">
-    {searchedBookList.map(book => <Book key={book.isbn} book={book} />)}
+    {searchedBookList.map(book => <Book key={book.isbn.toString()} book={book} />)}
   </div>
 ;
 
-function mapStateToProps(state) {
+function mapStateToProps({ books }) {
   return {
-    searchedBookList: state.books.searchedBookList,
+    searchedBookList: books.searchedBookList,
   };
 }
 

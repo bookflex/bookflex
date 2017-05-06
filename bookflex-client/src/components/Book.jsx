@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Rating from './Rating';
 
+const { objectOf, string } = PropTypes;
+
 const Book = ({ book }) => {
   // author, isbn, customerReviewRank, priceStandard
   const { title, description, coverLargeUrl } = book;
@@ -22,7 +24,7 @@ const Book = ({ book }) => {
 };
 
 Book.propTypes = {
-  book: PropTypes.objectOf(PropTypes.string).isRequired,
+  book: objectOf(string).isRequired,
 };
 
 export default Book;

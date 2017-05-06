@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 
 import { fetchBestseller } from './../actions';
 import '../style/Ranking.css';
 
-const { arrayOf, object, func } = PropTypes;
-
 class Ranking extends Component {
   componentWillMount() {
-    this.props.fetchBestseller();
+    // this.props.fetchBestseller();
   }
 
   render() {
@@ -41,7 +39,7 @@ function mapStateToProps(state) {
 
 Ranking.propTypes = {
   bestsellerBookList: arrayOf(object).isRequired,
-  fetchBestseller: func.isRequired,
+  // fetchBestseller: func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Ranking);

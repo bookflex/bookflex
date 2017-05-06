@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { arrayOf, object } from 'prop-types';
 
 import Book from './Book';
 import Ranking from '../components/Ranking';
-
-const { arrayOf, object } = PropTypes;
 
 const BestsellerList = ({ bestsellerBookList }) =>
   <div className="bestsellerList">

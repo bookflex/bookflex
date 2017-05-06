@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
-const { string } = PropTypes;
+import { string } from 'prop-types';
 
 const Tab = props =>
   <div className="tab">

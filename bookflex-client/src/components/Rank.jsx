@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-const { objectOf, string } = PropTypes;
+import { objectOf, string } from 'prop-types';
 
 const Rank = ({ bestseller }) =>
   <div className="rank">

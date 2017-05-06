@@ -6,7 +6,7 @@ const initialStates = {
 };
 
 export default function (state = initialStates, action) {
-  switch(action.type) {
+  switch (action.type) {
     case 'SEARCHED_BOOKS':
       return {
         ...state,
@@ -17,7 +17,7 @@ export default function (state = initialStates, action) {
         ...state,
         bestsellerBookList: action.payload,
       };
+    default:
+      return state;
   }
-
-  return state;
 }
