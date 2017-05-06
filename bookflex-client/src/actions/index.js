@@ -1,6 +1,3 @@
-/**
- * Created by Joy on 2017. 4. 17..
- */
 import fetchJsonp from 'fetch-jsonp';
 
 import config from '../config';
@@ -46,8 +43,21 @@ export function fetchBestseller() {
   }
 }
 
+export const fetchGenre = () =>
+  (dispatch) => {
+    dispatch({
+      type: 'Genre',
+      payload: [{
+        id: 1,
+        title: '장르',
+        coverUrl: 'http://monthly.chosun.com/upload/1405/1405_074.jpg',
+      }],
+    });
+  };
+
 export function fetchMainPage() {
   return (dispatch) => {
+    dispatch(fetchGenre());
     dispatch(fetchBestseller());
   };
 }
@@ -58,6 +68,4 @@ export const onClickTab = (key) => {
     key: key
   };
 };
-
-
 

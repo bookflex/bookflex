@@ -1,11 +1,10 @@
-/**
- * Created by Joy on 2017. 4. 24..
- */
 import { combineReducers } from 'redux';
 import BookReducer from './books.reducer';
+import GenreReducer from './genre.reducer';
 
 const rootReducer = combineReducers({
-  books: BookReducer
+  books: BookReducer,
+  genre: GenreReducer,
 });
 
 export default rootReducer;

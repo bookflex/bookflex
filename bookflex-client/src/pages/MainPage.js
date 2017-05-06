@@ -1,11 +1,9 @@
-/**
- * Created by Joy on 2017. 4. 24..
- */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 import { fetchMainPage } from '../actions'
 import BestsellerList from '../components/BestsellerList';
+import GenreList from '../components/GenreList';
 
 class MainPage extends Component {
 
@@ -18,6 +16,7 @@ class MainPage extends Component {
       <div>
         <BestsellerList />
         {/* must attach PostList and GenreList*/}
+        <GenreList />
       </div>
     );
   }
