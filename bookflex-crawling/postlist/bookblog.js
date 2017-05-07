@@ -39,4 +39,4 @@ app.get('/blogs', function(req, res) {
 
 app.listen('3306')
 
-exports = module.exports = app;
+module.exports = _promiseAll();
