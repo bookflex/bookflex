@@ -1,10 +1,9 @@
-const express = require('express')
 const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
-const app = express();
 
-app.get('/scrape', function(req, res) {
+
+(function getBookURL() {
 url = "http://m.book.naver.com/bestsell/list_ajax.nhn";
 
 request(url, function(error, response, body) {
@@ -22,12 +21,7 @@ request(url, function(error, response, body) {
             }     
          }
     })
-    res.send("<h1>asdfasdf</h1>");
-})
-app.listen('3306')
-
-console.log('Magic happens on port 8081');
+})();
 
 
-exports = module.exports = app;
 

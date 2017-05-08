@@ -1,8 +1,6 @@
-const express = require('express')
 const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
-const app = express();
 const URL = require('./JSON/bookurl.json');
 
 function _promiseAll(){
@@ -35,12 +33,12 @@ function _promiseAll(){
     });
 }
 
-app.get('/books', function(req, res) {
-    Promise.all( _promiseAll()).then((results)=>{
-        console.log(results);
-        fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
-    });
+
+Promise.all( _promiseAll()).then((results)=>{
+    console.log(results);
+    fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
 });
+
 
 //콜백헬 
 // var json = [];
@@ -70,9 +68,3 @@ app.get('/books', function(req, res) {
 // })
 
 
-app.listen('3306')
-
-console.log('Magic happens on port 3306');
-
-
-exports = module.exports = app;
