@@ -11,7 +11,7 @@ import RecommendationPage from '../pages/RecommendationPage';
 const App = () => (
   <Router>
     <div>
-      <TabList/>
+      <TabList />
       <Route exact path="/" component={MainPage}/>
       <Route path="/recommendations" component={RecommendationPage}/>
     </div>
