@@ -4,10 +4,12 @@
 import { combineReducers } from 'redux';
 import BookReducer from './books.reducer';
 import BestsellerReducer from './bestseller.reducer';
+import PostReducer from './posts.reducer.js';
 
 const rootReducer = combineReducers({
   books: BookReducer,
-  bestseller: BestsellerReducer
+  bestseller: BestsellerReducer,
+  posts: PostReducer
 });
 
 export default rootReducer;

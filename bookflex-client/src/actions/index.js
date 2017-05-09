@@ -57,5 +57,19 @@ export const onClickTab = (key) => {
   };
 };
 
+export function getPost() {
+    return (dispatch, getState) => {
+    
+
+ 
+  fetch('http://localhost:3001/posts/').then(function (res) {
+    return res.blob();
+  }).then(function(myBlob) {
+
+  //var objectURL = URL.createObjectURL(myBlob);
+  //...
+  .then
+
+}
 
 

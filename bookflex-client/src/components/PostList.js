@@ -2,11 +2,13 @@
  * Created by Woosikoosi on 2017. 4. 28.
  */
 
+
+
 class PostList extends Component {
   
     render() {
-        let postlist = postdata.map((val,idx) => {
-            return <Post key={idx} title={val.title} description={val.description} imgurl={val.imgurl}  />
+        let postlist = postdata.slice(0,10).map((val,idx) => {
+            return <Post key={val.postId} title={val.title} author={val.author} content={val.content} postImg={val.postImg} releasedDate={val.releasedDate}  />
         });
         console.log(postlist);
         return (
