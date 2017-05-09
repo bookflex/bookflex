@@ -21,5 +21,16 @@ router.post('/books', (req, res, next) => {
   res.send(true);
 });
 
+router.get('/posts', (req, res, next) => {
+  model.getPostsByPostId()
+    .then(function (rows) {
+      res.send(rows);
+    })
+    .catch(function (errors) {
+      res.send(errors);
+    })
+});
+
 export default router;
+
 

@@ -3,9 +3,11 @@
  */
 import { combineReducers } from 'redux';
 import BookReducer from './books.reducer';
+import PostReducer from './posts.reducer.js';
 
 const rootReducer = combineReducers({
-  books: BookReducer
+  books: BookReducer,
+  posts: PostReducer
 });
 
 export default rootReducer;

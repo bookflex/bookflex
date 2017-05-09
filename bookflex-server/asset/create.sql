@@ -44,10 +44,10 @@ CREATE TABLE Reviews (
 
 CREATE TABLE Posts (
     postId BIGINT(30) NOT NULL AUTO_INCREMENT,
-    title VARCHAR(100) NOT NULL,
-    author VARCHAR(100) NOT NULL,
-    content VARCHAR(1000) NOT NULL,
-    postImg VARCHAR(1000),
+    title VARCHAR(2000) NOT NULL,
+    author VARCHAR(2000) NOT NULL,
+    content VARCHAR(2000) NOT NULL,
+    postImg VARCHAR(2000),
     releasedDate VARCHAR(100),
  	PRIMARY KEY(postId)
 );
