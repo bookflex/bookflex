@@ -12,10 +12,10 @@ import '../style/Ranking.css';
 class Ranking extends Component {
   render() {
     //베스트셀러 API 호춢
-    debugger;
+
     this.props.getBestSeller();
     const temp = this.props.bestsellerBookList;
-    debugger;
+ 
 
     // console.log(temp);
     return (

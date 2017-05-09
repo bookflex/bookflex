@@ -38,6 +38,7 @@ export function searchBook(bookTitle) {
 }
 
 export function getBestSeller() {
+  // debugger;
   return(dispatch, getState) => {
     const url = `${config.BESTSELLER_API_URI}?key=${config.BESTSELLER_API_KEY}&categoryId=100&output=json`;
 
@@ -58,18 +59,16 @@ export const onClickTab = (key) => {
 };
 
 export function getPost() {
+  debugger;
     return (dispatch, getState) => {
-    
-
- 
-  fetch('http://localhost:3001/posts/').then(function (res) {
-    return res.blob();
-  }).then(function(myBlob) {
-
-  //var objectURL = URL.createObjectURL(myBlob);
-  //...
-  .then
-
+      fetch('http://localhost:3001/posts/')
+        .then(response => response.json())
+        .then(json => {
+          console.log(json);
+        })
+    }
 }
+
+
 
 
