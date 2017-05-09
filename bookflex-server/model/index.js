@@ -1,9 +1,10 @@
 /**
  * Created by Joy on 2017. 5. 1..
  */
-import mysql from 'mysql';
 
+import mysql from 'mysql';
 import env from '../config/index';
+
 import MysqlWrapper from './MysqlWrapper';
 
 const connection = mysql.createConnection({
@@ -32,9 +33,12 @@ const insertEachBookInfo = (book) => {
   });
 }
 
-export default {
-  connection, getBooksByUserId, insertEachBookInfo
+const getPostsByPostId = () => {
+  return mysqlWrapper.execute(`SELECT * FROM Posts WHERE PostId < 11`);
 }
 
+export default {
+  connection, getBooksByUserId, getPostsByPostId
+}
 
 

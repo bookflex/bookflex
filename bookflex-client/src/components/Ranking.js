@@ -10,6 +10,7 @@ import { fetchBestseller } from './../actions'
 import '../style/Ranking.css';
 
 class Ranking extends Component {
+
   componentWillMount() {
     this.props.fetchBestseller();
   }
