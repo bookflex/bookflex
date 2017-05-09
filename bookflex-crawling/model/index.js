@@ -35,8 +35,8 @@ let data = bookInfo.map((val)=>{
 
 connection.query(blogQuery, [data], function(err, rows) {
     if (err) {
-            console.log("error")
-            throw err;
+      console.log("error")
+      throw err;
     } 
     console.log("Book title");
     })
