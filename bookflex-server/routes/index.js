@@ -1,5 +1,5 @@
 import express from 'express';
-import getPostsByPostId from '../model'
+import model from '../model'
 
 const router = express.Router();
 
@@ -12,7 +12,7 @@ router.post('/books', (req, res, next) => {
 });
 
 router.get('/posts', (req, res, next) => {
-  getPostsById()
+  model.getPostsByPostId()
     .then(function (rows) {
       res.send(rows);
     })
