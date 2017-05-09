@@ -2,14 +2,15 @@
 CREATE TABLE Books (
     bookId BIGINT(30) NOT NULL AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL,
-    description VARCHAR(1000) NOT NULL,
+    description TEXT NOT NULL,
     author VARCHAR(100) NOT NULL,
     isbn VARCHAR(100) NOT NULL,
     coverLargeUrl VARCHAR(1000) NOT NULL,
     customerReviewRank DOUBLE(10) NOT NULL,
     standardPrice INTEGER(10) NOT NULL,
     saledPrice INTEGER(10),
-    PRIMARY KEY(bookId)
+    PRIMARY KEY(bookId),
+    UNIQUE KEY(isbn)
 );
 
 CREATE TABLE Users (

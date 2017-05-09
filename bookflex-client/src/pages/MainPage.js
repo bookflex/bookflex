@@ -4,19 +4,20 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-import { fetchData } from '../actions'
-import BookList from '../components/BookList';
+import { fetchMainPage } from '../actions'
+import BestsellerList from '../components/BestsellerList';
 
 class MainPage extends Component {
 
-  // componentWillMount() {
-  //   this.props.fetchData();
-  // }
+  componentWillMount() {
+    this.props.fetchMainPage();
+  }
 
   render() {
     return (
       <div>
-        <BookList />
+        <BestsellerList />
+        {/* must attach PostList and GenreList*/}
       </div>
     );
   }
@@ -24,8 +25,8 @@ class MainPage extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchData: () => {
-      dispatch(fetchData());
+    fetchMainPage: () => {
+      dispatch(fetchMainPage());
     }
   }
 }

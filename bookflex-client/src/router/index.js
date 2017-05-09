@@ -10,6 +10,7 @@ import RecommendationPage from '../pages/RecommendationPage';
 import Ranking from '../components/Ranking';
 import PostList from '../components/PostList';
 
+
 const App = () => (
   <Router>
     <div>

@@ -4,7 +4,8 @@
 const initialStates = {
   bookList: [],
   searchedBookList: [],
-  selectedBook: null
+  selectedBook: null,
+  bestsellerBookList: []
 };
 
 export default function (state = initialStates, action) {
@@ -13,6 +14,11 @@ export default function (state = initialStates, action) {
       return {
         ...state,
         searchedBookList: action.payload
+      };
+    case 'BESTSELLER_BOOKS':
+      return {
+        ...state,
+        bestsellerBookList: action.payload
       };
   }
   return state;
