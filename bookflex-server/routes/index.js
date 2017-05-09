@@ -1,5 +1,4 @@
 import express from 'express';
-import model from '../model'
 
 import model from '../model';
 
@@ -22,7 +21,6 @@ router.post('/books', (req, res, next) => {
   res.send(true);
 });
 
-<<<<<<< HEAD
 router.get('/posts', (req, res, next) => {
   model.getPostsByPostId()
     .then(function (rows) {
@@ -33,9 +31,6 @@ router.get('/posts', (req, res, next) => {
     })
 });
 
-
-export default router;
-=======
 export default router;
 
->>>>>>> develop
+

@@ -14,9 +14,7 @@ import PostList from '../components/PostList';
 const App = () => (
   <Router>
     <div>
-      <TabList/>
-      <Ranking />
-      <PostList />
+      <TabList />
       <Route exact path="/" component={MainPage}/>
       <Route path="/recommendations" component={RecommendationPage}/>
     </div>

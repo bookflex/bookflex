@@ -7,7 +7,6 @@ import Rating from './Rating';
 
 export default class Book extends Component {
   render() {
-
     const { title, description, author,
       coverLargeUrl, isbn, customerReviewRank,
       priceStandard } = this.props.book;
