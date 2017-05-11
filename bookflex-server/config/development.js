@@ -1,9 +1,12 @@
+/**
+ * Created by Joy on 2017. 4. 24..
+ */
 module.exports = {
   mysql: {
-    host: "192.168.56.101",
-    port: "3306",
-    user: "dev2",
-    password: "123qwe",
-    database: "bookflex"
+    host: 'localhost',
+    port: 3306,
+    user: 'dev',
+    password: '123qwe',
+    database: 'bookflex'
   }
 }

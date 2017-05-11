@@ -8,7 +8,6 @@ import { fetchMainPage } from '../actions'
 import BestsellerList from '../components/BestsellerList';
 
 class MainPage extends Component {
-
   componentWillMount() {
     this.props.fetchMainPage();
   }
