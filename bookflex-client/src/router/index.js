@@ -7,16 +7,13 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import TabList from '../components/TabList';
 import MainPage from '../pages/MainPage';
 import RecommendationPage from '../pages/RecommendationPage';
-import Ranking from '../components/Ranking';
-import PostList from '../components/PostList';
+
 
 
 const App = () => (
   <Router>
     <div>
       <TabList/>
-      <Ranking />
-      <PostList />
       <Route exact path="/" component={MainPage}/>
       <Route path="/recommendations" component={RecommendationPage}/>
     </div>

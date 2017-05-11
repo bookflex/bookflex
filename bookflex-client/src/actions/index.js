@@ -31,11 +31,6 @@ export function searchBook(bookTitle) {
   }
 }
 
-
-export function getBestSeller() {
-  return(dispatch, getState) => {
-    const url = `${config.BESTSELLER_API_URI}?key=${config.BESTSELLER_API_KEY}&categoryId=100&output=json`;
-
 export function fetchBestseller() {
   return (dispatch, getState) => {
     const url = `${config.BESTSELLER_API_URI}?key=${config.BOOK_API_KEY}&categoryId=100&output=json`;
@@ -55,6 +50,7 @@ export function fetchBestseller() {
 export function fetchMainPage() {
   return (dispatch) => {
     dispatch(fetchBestseller());
+    dispatch(fetchPost());
   };
 }
 
@@ -65,14 +61,17 @@ export const onClickTab = (key) => {
   };
 };
 
-export function getPost() {
+export function fetchPost() {
     return (dispatch, getState) => {
       fetch('http://localhost:3001/posts/')
         .then(response => response.json())
         .then(json => {
-
-        })
-    }
+          dispatch({
+            type: 'BESTSELLER_POSTS',
+            payload: json.item
+          })
+      })
+   }
 }
 
 

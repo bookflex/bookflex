@@ -2,7 +2,7 @@
  * Created by hwigyum on 2017. 4. 27..
  */
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+//import {connect} from 'react-redux';
 
 
 export default class Rank extends Component {
