@@ -1,19 +1,26 @@
 /**
  * Created by Joy on 2017. 4. 16..
  */
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
-const staticPath = path.resolve(__dirname, '../../bookflex-client/build/');
+import model from './model';
+import router from './routes';
+
+const staticPath = path.resolve(__dirname, '../bookflex-client/build/');
 
 const app = express();
 
+model.connection.connect();
+
 app.set('view engine', 'html');
 app.use(express.static(staticPath));
-
-app.get('/', function (req, res) {
-  res.render('index');
-});
+app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '5mb' }));
+app.use('/', router);
 
 app.listen(3001, () => {
   console.log('Bookflex-server is listening on port 3001');

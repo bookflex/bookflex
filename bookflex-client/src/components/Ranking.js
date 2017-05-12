@@ -5,19 +5,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Rank from './Rank';
-import { getBestSeller } from './../actions'
+import { fetchBestseller } from './../actions'
 
 import '../style/Ranking.css';
 
 class Ranking extends Component {
-  render() {
-    //베스트셀러 API 호춢
-    debugger;
-    this.props.getBestSeller();
-    const temp = this.props.bestsellerBookList;
-    debugger;
 
-    // console.log(temp);
+  componentWillMount() {
+    this.props.fetchBestseller();
+  }
+
+  render() {
     return (
       <div className="rankList">
         <ol>
@@ -34,15 +32,15 @@ class Ranking extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getBestSeller: () => {
-      dispatch(getBestSeller());
+    fetchBestseller: () => {
+      dispatch(fetchBestseller());
     }
   }
 }
 
 function mapStateToProps(state) {
   return {
-    bestsellerBookList: state.bestseller.bestsellerBookList
+    bestsellerBookList: state.books.bestsellerBookList
   };
 }
 

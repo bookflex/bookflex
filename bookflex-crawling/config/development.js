@@ -1,6 +1,3 @@
-/**
- * Created by Joy on 2017. 4. 24..
- */
 module.exports = {
   mysql: {
     host: "localhost",
