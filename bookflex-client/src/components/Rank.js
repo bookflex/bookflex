@@ -4,7 +4,6 @@
 import React, {Component} from 'react';
 //import {connect} from 'react-redux';
 
-
 export default class Rank extends Component {
   render() {
     const {title, link} = this.props.bestseller;

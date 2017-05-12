@@ -10,9 +10,9 @@ class BookList extends Component {
   render() {
     return (
       <div className="bookList">
-        {this.props.searchedBookList.map((book) => {
+        {this.props.searchedBookList.map((book, index) => {
           return (
-            <Book key={book.isbn} book={book} />
+            <Book key={index} book={book} />
           )
         })}
       </div>

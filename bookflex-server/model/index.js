@@ -31,14 +31,12 @@ const insertEachBookInfo = (book) => {
       return mysqlWrapper.execute(query);
     }
   });
-}
+};
 
 const getPostsByPostId = () => {
   return mysqlWrapper.execute(`SELECT * FROM Posts WHERE PostId < 11`);
-}
+};
 
 export default {
-  connection, getBooksByUserId, getPostsByPostId
-}
-
-
+  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo
+};

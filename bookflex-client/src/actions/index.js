@@ -1,12 +1,15 @@
 /**
  * Created by Joy on 2017. 4. 17..
  */
+import { push } from 'react-router-redux';
 import fetchJsonp from 'fetch-jsonp';
 
 import config from '../config';
 
 export function searchBook(bookTitle) {
   return (dispatch, getState) => {
+    // go to recommendation page
+    dispatch(push('/searchResultPage'));
     const url = `${config.BOOK_API_URI}?key=${config.BOOK_API_KEY}&query=${bookTitle}&output=json&maxResults=100`;
 
     fetchJsonp(url)
@@ -27,14 +30,12 @@ export function searchBook(bookTitle) {
           body: JSON.stringify(json.item)
         })
       });
-
   }
 }
 
 export function fetchBestseller() {
   return (dispatch, getState) => {
     const url = `${config.BESTSELLER_API_URI}?key=${config.BOOK_API_KEY}&categoryId=100&output=json`;
-
 
     fetchJsonp(url)
       .then(response => response.json())

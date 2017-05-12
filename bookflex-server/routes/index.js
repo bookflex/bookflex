@@ -16,7 +16,6 @@ router.post('/books', (req, res, next) => {
     .forEach(book => model.insertEachBookInfo(book)
       .then(result => console.log('success'))
       .catch(error => console.log('error', error)));
-
   res.send(true);
 });
 

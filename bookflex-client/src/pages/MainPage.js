@@ -3,13 +3,11 @@
  */
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-//import { bindActionCreator } from 'react-redux';
 import { fetchMainPage } from '../actions'
 import BestsellerList from '../components/BestsellerList';
 import PostList from '../components/PostList';
 
 class MainPage extends Component {
-
   componentWillMount() {
     this.props.fetchMainPage();
   }
