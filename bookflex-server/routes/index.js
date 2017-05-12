@@ -24,7 +24,6 @@ router.get('/posts', (req, res, next) => {
   model.getPostsByPostId()
     .then(function (rows) {
       res.send(rows);
-      console.log("rows: ", rows)
     })
     .catch(function (errors) {
       res.send(errors);

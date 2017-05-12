@@ -66,7 +66,6 @@ export function fetchPost() {
       fetch('http://localhost:3001/posts/')
         .then(response => response.json())
         .then(json => {
-          console.log(json[0])
           dispatch({
             type: 'BESTSELLER_POSTS',
             payload: json
