@@ -7,6 +7,7 @@ import {Route} from 'react-router-dom';
 import TabList from '../components/TabList';
 import MainPage from '../pages/MainPage';
 import RecommendationPage from '../pages/RecommendationPage';
+
 import SearchResultPage from '../pages/SearchResultPage';
 
 const App = () => (

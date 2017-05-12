@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
+
 import createHistory from 'history/createBrowserHistory';
 import {ConnectedRouter, routerReducer, routerMiddleware, push} from 'react-router-redux'
 import thunk from 'redux-thunk';
@@ -11,6 +12,7 @@ const history = createHistory();
 const middleware = routerMiddleware(history);
 
 import './style/index.css';
+import './style/post.css';
 import reducers from './reducers';
 
 import App from './router';

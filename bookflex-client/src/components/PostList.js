@@ -4,23 +4,25 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Post from './Post'
-import { getPost } from '../actions'
+import {fetchPost} from '../actions'
 
 class PostList extends Component {
   componentWillMount() {
-    this.setState(
-      {postdata: this.props.getPost()}
-    );
+    this.props.fetchPost();
   }
 
   render() {
-    let postlist = this.state.postdata.slice(0, 10).map((val, idx) => {
-      return <Post key={val.postId} title={val.title} author={val.author} content={val.content} postImg={val.postImg}
-                   releasedDate={val.releasedDate}/>
-    });
+    if (this.props.postlist == undefined) {
+      return <div>
+        <h2> postlist has not been loaded </h2>
+      </div>
+    }
     return (
       <div className="main">
-        {postlist}
+        {this.props.postlist.slice(0, 10).map((val, idx) => {
+          return <Post key={val.postId} title={val.title} author={val.author} content={val.content}
+                       postImg={val.postImg} releasedDate={val.releasedDate}/>
+        })}
       </div>
     )
   }
@@ -28,10 +30,20 @@ class PostList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getPost: () => {
-      dispatch(getPost());
+    fetchPost: () => {
+      dispatch(fetchPost());
     }
   }
 }
 
-export default connect(mapDispatchToProps)(PostList);
+function mapStateToProps(state) {
+  return {
+    postlist: state.posts.bestsellerPostList
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+
+
+  
+ 

@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import BookReducer from './books.reducer';
-import PostReducer from './posts.reducer.js';
+import PostReducer from './posts.reducer';
 
 const rootReducer = combineReducers({
   router: routerReducer,
