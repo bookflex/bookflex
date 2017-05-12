@@ -51,3 +51,37 @@ CREATE TABLE Posts (
     releasedDate VARCHAR(100),
  	PRIMARY KEY(postId)
 );
+
+CREATE TABLE Genre (
+    genreId BIGINT(30) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(1000) NOT NULL,
+    PRIMARY KEY(genreId)
+)
+
+INSERT INTO Genre(name) VALUES
+("소설"),
+("시/에세이"),
+("예술/대중문화"),
+("사회과학"),
+("역사와 문화"),
+("잡지"),
+("만화"),
+("유아"),
+("아동"),
+("가정과 생활"),
+("청소년"),
+("초등학습서"),
+("고등학습서"),
+("국어/외국어/사전"),
+("자연과 과학"),
+("경제경영"),
+("자기계발"),
+("인문"),
+("종교/역학"),
+("컴퓨터/인터넷"),
+("자격서/수험서"),
+("취미/레저"),
+("전공도서/대학교재"),
+("건강/뷰티"),
+("여행"),
+("중등학습서");

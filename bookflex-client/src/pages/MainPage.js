@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import { fetchMainPage } from '../actions'
 import BestsellerList from '../components/BestsellerList';
 import PostList from '../components/PostList';
+import GenreList from '../components/GenreList';
 
 class MainPage extends Component {
   componentWillMount() {
@@ -17,7 +18,7 @@ class MainPage extends Component {
       <div>
         <BestsellerList />
         <PostList />
-        {/* must attach PostList and GenreList*/}
+        <GenreList />
       </div>
     );
   }

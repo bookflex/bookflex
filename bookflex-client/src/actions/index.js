@@ -6,6 +6,8 @@ import fetchJsonp from 'fetch-jsonp';
 
 import config from '../config';
 
+export const GENRE = 'GENRE';
+
 export function searchBook(bookTitle) {
   return (dispatch, getState) => {
     // go to recommendation page
@@ -48,10 +50,29 @@ export function fetchBestseller() {
   }
 }
 
+export function fetchGenre() {
+  return (dispatch) => {
+    fetch('http://localhost:3001/genre/', {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+    })
+    .then(response => response.json())
+    .then(json => {
+      dispatch({
+        type: GENRE,
+        payload: json.item
+      });
+    })
+  }
+}
+
 export function fetchMainPage() {
   return (dispatch) => {
     dispatch(fetchBestseller());
     dispatch(fetchPost());
+    dispatch(fetchGenre());
   };
 }
 
@@ -64,7 +85,11 @@ export const onClickTab = (key) => {
 
 export function fetchPost() {
     return (dispatch, getState) => {
-      fetch('http://localhost:3001/posts/')
+      fetch('http://localhost:3001/posts/', {
+        headers: new Headers({
+          'Content-Type': 'application/json'
+        })
+      })
         .then(response => response.json())
         .then(json => {
           dispatch({

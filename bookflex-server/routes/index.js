@@ -1,5 +1,5 @@
 import express from 'express';
-import model from '../model'
+import model from '../model';
 
 const router = express.Router();
 
@@ -27,6 +27,12 @@ router.get('/posts', (req, res, next) => {
     .catch(function (errors) {
       res.send(errors);
     })
+});
+
+router.get('/genre', (req, res, next) => {
+  model.getGenre()
+  .then(data => res.send(data))
+  .catch(error => res.send(error));
 });
 
 export default router;

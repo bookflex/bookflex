@@ -37,6 +37,11 @@ const getPostsByPostId = () => {
   return mysqlWrapper.execute(`SELECT * FROM Posts WHERE PostId < 11`);
 };
 
+const getGenre = () => {
+  console.log(mysqlWrapper.execute('SELECT name FROM Genre'));
+  return mysqlWrapper.execute('SELECT name FROM Genre');
+};
+
 export default {
-  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo
+  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo, getGenre
 };
