@@ -11,7 +11,12 @@ class PostList extends Component {
       this.props.fetchPost();
     }
 
-    render() {        
+    render() {    
+        if (this.props.postlist == undefined) {
+            return <div>
+                <h2> postlist has not been loaded </h2>
+                </div>
+        }    
         // let postlist = this.props.fetchPost().slice(0,10).map((val,idx) => {
         //     return <Post key={val.postId} title={val.title} author={val.author} content={val.content} postImg={val.postImg} releasedDate={val.releasedDate}  />
         // });
