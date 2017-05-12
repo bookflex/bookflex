@@ -50,6 +50,7 @@ export function fetchBestseller() {
 export function fetchMainPage() {
   return (dispatch) => {
     dispatch(fetchBestseller());
+    dispatch(fetchPost());
   };
 }
 
@@ -60,14 +61,17 @@ export const onClickTab = (key) => {
   };
 };
 
-export function getPost() {
+export function fetchPost() {
     return (dispatch, getState) => {
       fetch('http://localhost:3001/posts/')
         .then(response => response.json())
         .then(json => {
-
-        })
-    }
+          dispatch({
+            type: 'BESTSELLER_POSTS',
+            payload: json
+          })
+      })
+   }
 }
 
 

@@ -1,6 +1,5 @@
 import express from 'express';
-
-import model from '../model';
+import model from '../model'
 
 const router = express.Router();
 
@@ -32,5 +31,3 @@ router.get('/posts', (req, res, next) => {
 });
 
 export default router;
-
-
