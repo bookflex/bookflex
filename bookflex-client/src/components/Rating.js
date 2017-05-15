@@ -7,10 +7,14 @@ import Stars from './Stars';
 
 export default class Rating extends Component {
   render() {
+    const bookId = this.props.bookId;
     return (
-      <div>
+      <div className="rating">
+        {/*<div className="title">*/}
+          {/*{this.props.bookTitle}*/}
+        {/*</div>*/}
         <div className="stars">
-          <Stars />
+          <Stars bookId={bookId} />
         </div>
         <div className="like">
 

@@ -5,6 +5,7 @@ import express from 'express';
 import path from 'path';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import passport from 'passport';
 
 import model from './model';
 import router from './routes';
@@ -20,6 +21,8 @@ app.use(express.static(staticPath));
 app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: '5mb' }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', router);
 
 app.listen(3001, () => {

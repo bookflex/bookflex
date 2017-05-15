@@ -63,18 +63,43 @@ export const onClickTab = (key) => {
 };
 
 export function fetchPost() {
-    return (dispatch, getState) => {
-      fetch('http://localhost:3001/posts/')
-        .then(response => response.json())
-        .then(json => {
-          dispatch({
-            type: 'BESTSELLER_POSTS',
-            payload: json
-          })
+  return (dispatch, getState) => {
+    fetch('http://localhost:3001/posts/')
+      .then(response => response.json())
+      .then(json => {
+        dispatch({
+          type: 'BESTSELLER_POSTS',
+          payload: json
+        })
       })
-   }
+  };
 }
 
+export function insertStarPoint(bookId, starPoint) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: 'STAR_POINT',
+      payload: starPoint
+    });
 
+    fetch('http://localhost:3001/books/stars', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({ bookId: bookId, starPoint: starPoint })
+    })
+  };
+}
 
-
+export function registerUser(email, password) {
+  return (dispatch, getState) => {
+    fetch('http://localhost:3001/register/user', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({ email: email, password: password })
+    }).then(response => response.json())
+  };
+}

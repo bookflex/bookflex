@@ -27,7 +27,6 @@ const insertEachBookInfo = (book) => {
       const query = `INSERT INTO Books(title, description, author, isbn, coverLargeUrl, customerReviewRank, standardPrice, saledPrice) 
         VALUES ('${book.title}', '${book.description}', '${book.author}', '${book.isbn}',
          '${book.coverLargeUrl}', ${book.customerReviewRank}, ${book.priceStandard}, ${book.priceSales})`;
-      console.log('query', query);
       return mysqlWrapper.execute(query);
     }
   });
@@ -37,6 +36,30 @@ const getPostsByPostId = () => {
   return mysqlWrapper.execute(`SELECT * FROM Posts WHERE PostId < 11`);
 };
 
+const insertEachBookStarPoint = (bookId, starPoint) => {
+  //must add check Logic duplicated star point by book
+  const query = `INSERT INTO Reviews(bookId, star) VALUES ('${bookId}','${starPoint}')`;
+  return mysqlWrapper.execute(query);
+};
+
+const getUser = (email, password) => {
+  const query = `SELECT * FROM Users WHERE email = '${email}', password = '${password}'`;
+  return mysqlWrapper.execute(query);
+};
+
+const getUserByUserId = (userId) => {
+  const query = `SELECT * FROM Users WHERE userId = '${userId}'`;
+  return mysqlWrapper.execute(query);
+};
+
+const insertNewUser = (email, password) => {
+  const query = `INSERT INTO Users(email, password) VALUES ('${email}','${password}')`;
+  return mysqlWrapper.execute(query);
+}
+
 export default {
-  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo
+  connection, getBooksByUserId,
+  getPostsByPostId, insertEachBookInfo,
+  insertEachBookStarPoint, getUser,
+  getUserByUserId, insertNewUser
 };

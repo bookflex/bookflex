@@ -29,4 +29,14 @@ router.get('/posts', (req, res, next) => {
     })
 });
 
+router.post('/books/stars', (req, res, next) => {
+  const { bookId, starPoint } = req.body;
+  model.insertEachBookStarPoint(bookId, starPoint).then(() => res.send(true));
+});
+
+router.post('register/user', (req, res, next) => {
+  const { email, password } = req.body;
+  model.insertNewUser(email, password).then(() => res.send(true));
+});
+
 export default router;

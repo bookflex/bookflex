@@ -11,8 +11,9 @@ export default class TabList extends Component {
     return (
       <div className="tabList">
         <Tab link="/" name="Main" />
-        <Tab link="/recommendations" name="Recommendations"/>
+        <Tab link="/recommendations" name="Recommendations" />
         <SearchBar />
+        <Tab link="/login" name="Login"/>
       </div>
     );
   }
