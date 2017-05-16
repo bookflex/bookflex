@@ -1,7 +1,7 @@
 /**
  * Created by Joy on 2017. 4. 17..
  */
-import { push } from 'react-router-redux';
+import {push} from 'react-router-redux';
 import fetchJsonp from 'fetch-jsonp';
 
 import config from '../config';
@@ -87,7 +87,7 @@ export function insertStarPoint(bookId, starPoint) {
       headers: new Headers({
         'Content-Type': 'application/json'
       }),
-      body: JSON.stringify({ bookId: bookId, starPoint: starPoint })
+      body: JSON.stringify({bookId: bookId, starPoint: starPoint})
     })
   };
 }
@@ -99,7 +99,22 @@ export function registerUser(email, password) {
       headers: new Headers({
         'Content-Type': 'application/json'
       }),
-      body: JSON.stringify({ email: email, password: password })
+      body: JSON.stringify({email: email, password: password})
     }).then(response => response.json())
+      .then(json => {
+        console.log(json);
+      })
+  };
+}
+
+export function confirmUser(email, password) {
+  return (dispatch, getState) => {
+    const user = {email, password};
+
+    fetch(`http://localhost:3001/confirm/user?user=${email}&password=${password}`)
+      .then(response => response.json())
+      .then(json => {
+        console.log("my json", json);
+      })
   };
 }

@@ -18,7 +18,7 @@ model.connection.connect();
 
 app.set('view engine', 'html');
 app.use(express.static(staticPath));
-app.use(cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
+app.use(cors({ origin:'http://localhost:3000', optionsSuccessStatus: 200 }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: '5mb' }));
 app.use(passport.initialize());

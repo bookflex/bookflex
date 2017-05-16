@@ -177,3 +177,100 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 
 /*** Login CSS***/
+/**{*/
+    /*box-sizing:border-box;*/
+/*}*/
+/**:focus{*/
+    /*outline:none;*/
+/*}*/
+/*body{*/
+    /*!*Background *!*/
+    /*background:url(https://i.imgpile.com/2016/09/14/a919d5fcd1e68360c45b3afde9fedddc.jpg)center center fixed;*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*!*Background End *!*/
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    /*margin:0;*/
+    /*padding:0;*/
+/*}*/
+.container{
+    text-align:center;
+    position:relative;
+    margin:20px auto auto auto;
+    height:400px;
+    width: 400px;
+    background-color:rgba(42, 58, 71, 0.5);
+    border-radius:5px;
+}
+.form-wrapper{
+    display:block;
+    position:absolute;
+    top:5px;
+    left:15px;
+    right:15px;
+    padding:10px;
+    border-radius:5px;
+}
+.form-wrapper h1{
+    font-family: 'Poiret One', cursive;
+    color:#ffe082;
+    letter-spacing:5px;
+    font-size:32px;
+}
+.form-wrapper input[type=email],input[type=password]{
+    width: 100%;
+    padding:10px;
+    border:none;
+    border-radius:2px;
+    border-bottom:4px solid #ccc;
+    margin-bottom:10px;
+    font-size:14px;
+    transition:all 0.6s linear;
+}
+.form-wrapper input[type=email]:focus,input[type=password]:focus{
+    border-bottom:4px solid #ffe082;
+    color:#607D8B;
+}
+.form-wrapper input[type=button]{
+    width: 100%;
+    padding: 15px;
+    border:none;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius:2px;
+    font-size:14px;
+    letter-spacing:2px;
+}
+.form-wrapper input[type=button].btn-login{
+    border-bottom: 3px solid #D81B60;
+    background-color: #ec407a;
+    color: #FBE9E7;
+    transition:all 0.3s linear;
+}
+.form-wrapper input[type=button].btn-login:hover{
+    border-bottom: 3px solid #ff7043;
+    background-color: #FF8A65;
+    color: #FBE9E7;
+    cursor:pointer;
+}
+.form-wrapper input[type=button].btn-register{
+    border-bottom: 3px solid #009688;
+    background-color: #26a69a;
+    color: #FBE9E7;
+    margin-bottom: 15px;
+    transition:all 0.3s linear;
+}
+.form-wrapper input[type=button].btn-register:hover{
+    border-bottom: 3px solid #009688;
+    background-color: #4DB6AC;
+    color: #FBE9E7;
+    cursor:pointer;
+}
+.form-wrapper a{
+    text-decoration:none;
+    color:#FBE9E7;
+
+}
+.form-wrapper a:hover{
+    text-decoration:underline;
+}

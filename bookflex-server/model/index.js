@@ -43,7 +43,7 @@ const insertEachBookStarPoint = (bookId, starPoint) => {
 };
 
 const getUser = (email, password) => {
-  const query = `SELECT * FROM Users WHERE email = '${email}', password = '${password}'`;
+  const query = `SELECT * FROM Users WHERE email = '${email}'AND password = '${password}'`;
   return mysqlWrapper.execute(query);
 };
 
@@ -55,7 +55,7 @@ const getUserByUserId = (userId) => {
 const insertNewUser = (email, password) => {
   const query = `INSERT INTO Users(email, password) VALUES ('${email}','${password}')`;
   return mysqlWrapper.execute(query);
-}
+};
 
 export default {
   connection, getBooksByUserId,

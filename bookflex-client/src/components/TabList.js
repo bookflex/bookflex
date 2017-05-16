@@ -13,7 +13,7 @@ export default class TabList extends Component {
         <Tab link="/" name="Main" />
         <Tab link="/recommendations" name="Recommendations" />
         <SearchBar />
-        <Tab link="/login" name="Login"/>
+        <Tab link="/login" name="Login" />
       </div>
     );
   }

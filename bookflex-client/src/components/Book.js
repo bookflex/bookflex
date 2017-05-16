@@ -9,7 +9,7 @@ import Modal from './Modal';
 export default class Book extends Component {
   constructor(props) {
     super(props);
-    this.state = {showModal: false}
+    this.state = {showModal: false};
     this.handleToggleClick = this.handleToggleClick.bind(this);
   }
 
