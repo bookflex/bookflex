@@ -75,6 +75,25 @@ export function fetchPost() {
    }
 }
 
+export function fetchLoginAjax(url, sendData){
+    return(dispatch, getState) => {
+        const sending = JSON.stringify(sendData);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(sending);
+
+        xhr.addEventListener("load", function(){
+            console.log(xhr.responseText);
+        })
+
+        dispatch({
+          type: 'AJAX_LOGIN',
+          payload: xhr.responseText
+        })
+    }
+}
 
 
 

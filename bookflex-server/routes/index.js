@@ -29,4 +29,9 @@ router.get('/posts', (req, res, next) => {
     })
 });
 
+router.post('/login', (req,res,next) =>{
+  console.log("receive client login data");
+  res.send("receive data");
+})
+
 export default router;
