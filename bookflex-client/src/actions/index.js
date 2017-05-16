@@ -77,21 +77,33 @@ export function fetchPost() {
 
 export function fetchLoginAjax(url, sendData){
     return(dispatch, getState) => {
+      console.log("here is action");
+      console.log(url, sendData);
         const sending = JSON.stringify(sendData);
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(sending);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('POST', url);
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        // xhr.send(sending);
 
-        xhr.addEventListener("load", function(){
-            console.log(xhr.responseText);
-        })
+        // xhr.addEventListener("load", function(){
+        //     console.log(xhr.responseText);
+        // })
 
-        dispatch({
-          type: 'AJAX_LOGIN',
-          payload: xhr.responseText
-        })
+        fetch(url, {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/json'
+          }),
+          body: sendData
+        }).then(response => {
+          console.log(response);
+          dispatch({
+            type: 'AJAX_LOGIN',
+            payload: response
+          })
+        } )
+        console.log("end action"); 
     }
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import action from './../actions';
+import action, { fetchLoginAjax } from './../actions';
 
 class SignButton extends Component{
     SignUP() {
@@ -8,8 +8,8 @@ class SignButton extends Component{
         const sendData = {};
         sendData.email = document.forms[0].elements[0].value;
         sendData.password = document.forms[0].elements[1].value;
-
-        this.props.fetchLoginAjax('http://localhost:3001/login', sendData)
+        console.log(sendData);
+        this.props.fetchLoginAjax('http://localhost:3001/login', sendData);
     }
 
     // fetchLoginAjax(url, sendData){
@@ -48,7 +48,7 @@ class SignButton extends Component{
 function mapDispatchToProps(dispatch){
     return {
         fetchLoginAjax: (url, sendData) => {
-            dispatch(action.fetchLoginAjax(url, sendData));
+            dispatch(fetchLoginAjax(url, sendData));
         }
     }
 }
