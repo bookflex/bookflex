@@ -37,6 +37,11 @@ const getPostsByPostId = () => {
   return mysqlWrapper.execute(`SELECT * FROM Posts WHERE PostId < 11`);
 };
 
+// gyums code start //
+const getUsersByEmail = (email) => {
+  return mysqlWrapper.execute('select * from Users where email=?', email)
+}
+// gyums code end //
 export default {
   connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo
 };

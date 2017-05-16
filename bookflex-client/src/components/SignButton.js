@@ -33,7 +33,7 @@ class SignButton extends Component{
             <div>
                 <form>
                         <label><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="name" required/><br/>
+                        <input type="text" placeholder="Enter Email" name="email" required/><br/>
 
                         <label><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="password" required/><br/>

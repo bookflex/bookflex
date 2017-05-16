@@ -80,7 +80,7 @@ export function fetchLoginAjax(url, sendData){
       console.log("here is action");
       console.log(url, sendData);
         const sending = JSON.stringify(sendData);
-
+        console.log(sending);
         // var xhr = new XMLHttpRequest();
         // xhr.open('POST', url);
         // xhr.setRequestHeader("Content-Type", "application/json");
