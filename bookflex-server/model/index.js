@@ -39,9 +39,12 @@ const getPostsByPostId = () => {
 
 // gyums code start //
 const getUsersByEmail = (email) => {
-  return mysqlWrapper.execute('select * from Users where email=?', email)
+  console.log("now in query : ", email)
+  const query = `select * from Users where email='${email}'`
+  console.log(query);
+  return mysqlWrapper.execute(query)
 }
 // gyums code end //
 export default {
-  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo
+  connection, getBooksByUserId, getPostsByPostId, insertEachBookInfo, getUsersByEmail
 };

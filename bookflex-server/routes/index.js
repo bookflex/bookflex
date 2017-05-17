@@ -9,7 +9,7 @@ const router = express.Router();
 // gyums code start // 
 passport.serializeUser(function(user, done) {
   console.log('passport success');
-  console.log(user);
+  console.log("here is serialize", user);
   done(null, user);
 });
 
@@ -18,7 +18,7 @@ passport.deserializeUser(function(id, done) {
   done(null, id);
 });
 
-passport.use('daum', new LocalStrategy({
+passport.use('local-login', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
@@ -26,9 +26,19 @@ passport.use('daum', new LocalStrategy({
   console.log('local-login call called');
   console.log(email, password, req.body);
 
-  const result = model.getUsersByEmail(email);
-  console.log(result);
-  return done(null, {message: "here is authenticate"});
+// .then(data => {console.log("query result:");
+// console.log(data)
+// })
+  const result = model.getUsersByEmail(email)
+  .then((data) => {
+  if(data){
+  return done(null, {message: "authenticate sign in succes next is serialize"});
+}else{
+  return done(null, false, {message: "authenticate sign in fail next ?"})
+}}
+)
+  
+  
   //아디디가 있는지 확인
     //없으면 "다시 시도하십시오 반환"
   //비밀번호가 있는지 확인
@@ -65,9 +75,8 @@ router.get('/posts', (req, res, next) => {
 router.post('/login', (req,res,next) =>{
   console.log("ajax client login data");
   console.log(req.body);
-  console.log(req.query);
-  passport.authenticate('daum', function(err, user, info){
-    console.log(user, info);
+  passport.authenticate('local-login', function(err, user, info){
+    console.log("authenticate in : ", user, info);
     //이상한 경우의 조건 처리
 
     req.logIn(user, function(err){

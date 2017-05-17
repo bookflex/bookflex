@@ -77,10 +77,10 @@ export function fetchPost() {
 
 export function fetchLoginAjax(url, sendData){
     return(dispatch, getState) => {
-      console.log("here is action");
-      console.log(url, sendData);
+      console.log("start action");
+      console.log("fetchLoginAjax param", url, sendData);
         const sending = JSON.stringify(sendData);
-        console.log(sending);
+        console.log("req.body : ", sending);
         // var xhr = new XMLHttpRequest();
         // xhr.open('POST', url);
         // xhr.setRequestHeader("Content-Type", "application/json");
@@ -95,7 +95,7 @@ export function fetchLoginAjax(url, sendData){
           headers: new Headers({
             'Content-Type': 'application/json'
           }),
-          body: sendData
+          body: sending
         }).then(response => {
           console.log(response);
           dispatch({
