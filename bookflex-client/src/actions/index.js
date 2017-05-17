@@ -1,7 +1,7 @@
 /**
  * Created by Joy on 2017. 4. 17..
  */
-import { push } from 'react-router-redux';
+import {push} from 'react-router-redux';
 import fetchJsonp from 'fetch-jsonp';
 
 import config from '../config';
@@ -63,18 +63,66 @@ export const onClickTab = (key) => {
 };
 
 export function fetchPost() {
-    return (dispatch, getState) => {
-      fetch('http://localhost:3001/posts/')
-        .then(response => response.json())
-        .then(json => {
-          dispatch({
-            type: 'BESTSELLER_POSTS',
-            payload: json
-          })
+  return (dispatch, getState) => {
+    fetch('http://localhost:3001/posts/')
+      .then(response => response.json())
+      .then(json => {
+        dispatch({
+          type: 'BESTSELLER_POSTS',
+          payload: json
+        })
       })
-   }
+  };
 }
 
+export function insertStarPoint(bookId, starPoint) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: 'STAR_POINT',
+      payload: starPoint
+    });
 
+    fetch('http://localhost:3001/books/stars', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({bookId: bookId, starPoint: starPoint})
+    })
+  };
+}
 
+export function registerUser(email, password) {
+  return (dispatch, getState) => {
+    fetch('http://localhost:3001/register/user', {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      }),
+      body: JSON.stringify({email: email, password: password})
+    }).then(response => response.json())
+      .then(json => {
+        console.log(json);
+      })
+  };
+}
 
+export function confirmUser(email, password) {
+  return (dispatch, getState) => {
+    const user = {email, password};
+
+    fetch(`http://localhost:3001/confirm/user?user=${email}&password=${password}`)
+      .then(response => response.json())
+      .then(json => {
+        console.log("my json", json);
+      })
+  };
+}
+
+export function logoutUser(req, res) {
+  return (dispatch, getState) => {
+    req.session.destroy();
+    res.clearCookie('bookflex');
+    res.redirect('/');
+  }
+}
