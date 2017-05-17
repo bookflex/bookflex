@@ -9,10 +9,10 @@ export default class Rating extends Component {
   render() {
     const bookId = this.props.bookId;
     return (
-      <div className="rating">
-        {/*<div className="title">*/}
-          {/*{this.props.bookTitle}*/}
-        {/*</div>*/}
+      <div>
+        <div className="title">
+          {this.props.bookTitle}
+        </div>
         <div className="stars">
           <Stars bookId={bookId} />
         </div>

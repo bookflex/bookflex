@@ -118,3 +118,11 @@ export function confirmUser(email, password) {
       })
   };
 }
+
+export function logoutUser(req, res) {
+  return (dispatch, getState) => {
+    req.session.destroy();
+    res.clearCookie('bookflex');
+    res.redirect('/');
+  }
+}
