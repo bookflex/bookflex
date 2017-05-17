@@ -11,13 +11,13 @@ function _promiseAll(){
             request(newUrl, function(error, response, body) {
                 if (!error && response.statusCode == 200) {
                     let $ = cheerio.load(body);
-                    let blog = $('.ct').attr('href');
-                    // var bloglist = [];
-                    // for (let i = 0; i < blog.length; i++) {
-                    //     bloglist.push(blog(i).attr('href'));
-                    // }
+                    var blog = $('.ct');
+                    var bloglist = [];
+                    for (var i = 0; i < 5; i++) {
+                        bloglist.push(blog[i].getAttribute('href'));
+                        }
                     resolve(
-                        blog
+                        bloglist
                     );
                 }else{
                     reject(error)

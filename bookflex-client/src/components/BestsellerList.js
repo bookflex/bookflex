@@ -6,11 +6,13 @@ import {connect} from 'react-redux';
 
 import Book from './Book';
 import Ranking from '../components/Ranking';
+import Login from '../components/Login';
 
 class BestsellerList extends Component {
   render() {
     return (
       <div className="bestsellerList">
+        <Login /> 
         <Ranking />
         <div className="bestsellers">
           {this.props.bestsellerBookList.map((book) => {

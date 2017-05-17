@@ -3,30 +3,53 @@ html, body {
     width:100%;
     margin:0;
     padding:0;
+    list-style: none;
 }
 
 .tab {
-    display: inline-block;
-    margin: 10px;
+    float: left;
+    display: block;
+    margin-left: 10px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    border-bottom: 5px solid red;
+    transition: all 0.3s ease-in-out;
 }
 
 .tabList {
-    background-color: rgba(217,217,217,0.4);
-}
-
-.searchBar {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    display: inline-block;
-    margin-left: 350px;
+    aposition: fixed;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    z-index: 99999;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-bottom: 1px solid #c8c8c8;
 }
 
 .searchBar input {
+  border-radius: 15px;
+  border: 0 none;
+  padding: 6px 10px 6px 30px;
+  height: 10px;
+  width: 220px;
+  color: black;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #c8c8c8;
+  box-sizing: content-box;
+  margin-left: 250px;
+  margin-top: 12px;
+}
+
+/*.searchBar input {
     width: 300px;
     border-radius: 5px;
     line-height: 20px;
-}
+}*/
 
 .book {
     background-color: rgba(247,250,250,0.4);
@@ -67,6 +90,55 @@ html, body {
     border-radius: 5px;
 }
 
+/***** CSS for Posts *****/
+
+.main {
+  position: relative;
+  top: 50px;
+  background-color: #e5e5e5;
+  height: 100%;
+  width:100%;
+}
+
+.posts {
+  height: 100px;
+  width: 45%;
+  border: 0px solid black;
+  float: left;
+  margin: 2%;
+  background-color: #FFFFFF;
+}
+
+.posts-left {
+  height: 100%;
+  width: 30%;
+  cursor: pointer;
+  float: left;
+}
+
+.post-img {
+  height: 100%;
+  width: 100%;
+}
+
+.posts-right {
+  width: 68%;
+  height:100%;
+  float: left;
+  margin-left: 2%;
+  overflow: scroll;
+}
+
+.post-title {
+  height: 15%;
+  margin: 2% 0;
+  color: #b0b0b6;
+}
+
+.post-description {
+  height: 80%;
+  color: #b0b0b6;
+}
 
 
 
