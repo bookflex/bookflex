@@ -3,37 +3,67 @@ html, body {
     width:100%;
     margin:0;
     padding:0;
+    list-style: none;
 }
-
 
 
 /*** TabList and Tab component***/
 .tab {
     display: inline-block;
-    margin: 10px;
+    margin: 10px 25px 25px 25px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    border-bottom: 5px solid red;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab a {
+    color: black;
+    text-decoration: none;
+}
+
+.tab a:hover {
+    color: #828282;
 }
 
 .tabList {
-    background-color: rgba(217,217,217,0.4);
+    position: fixed;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    z-index: 99999;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-bottom: 1px solid #c8c8c8;
 }
-
-
 
 /*** SearchBar component***/
 .searchBar {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 13px 0 0 350px;
     text-align: center;
     display: inline-block;
-    margin-left: 350px;
 }
 
 .searchBar input {
-    width: 300px;
-    border-radius: 5px;
+    width: 150px;
+    height: 10px;
+    padding: 6px 10px 6px 30px;
     line-height: 20px;
+    border-radius: 15px;
+    line-height: 20px;
+    font-size: 15px;
+    color: black;
+    box-sizing: content-box;
+    background-color: #c8c8c8;
 }
 
+.searchBar input:focus{
+    outline: none;
+    background-color: white;
+}
 
 
 /*** BookList and Book component***/
