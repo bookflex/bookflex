@@ -13,9 +13,9 @@ class BestsellerList extends Component {
       <div className="bestsellerList">
         <Ranking />
         <div className="bestsellers">
-          {this.props.bestsellerBookList.map((book) => {
+          {this.props.bestsellerBookList.map((book, index) => {
             return (
-              <Book key={book.isbn} book={book}/>
+              <Book key={index} book={book}/>
             )})}
         </div>
       </div>
