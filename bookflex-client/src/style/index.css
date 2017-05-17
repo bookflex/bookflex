@@ -4,8 +4,8 @@ html, body {
     margin:0;
     padding:0;
     list-style: none;
+    background-color: #e5e5e5;
 }
-
 
 /*** TabList and Tab component***/
 .tab {
@@ -65,20 +65,26 @@ html, body {
     background-color: white;
 }
 
+/*** BestSellerList Component ***/
+.BestsellerList{
+    position:relative;
+    top: 50px;
+}
 
 /*** BookList and Book component***/
 .book {
-    background-color: rgba(247,250,250,0.4);
+    /*background-color: rgba(247,250,250,0.4);*/
     margin: 20px 0px;
-    height: 400px;
+    height: 350px;
+    background-color: #fff;
 }
 
 .book .cover {
-    margin: 20px;
-    border: 1px solid ;
+    margin: 20px 0px;
+    /*border: 1px solid ;*/
     height: 100%;
     border-radius: 15px;
-    border-color: rgba(217,217,217,0.4);
+    /*border-color: rgba(217,217,217,0.4);*/
 }
 
 .book .description {
@@ -106,12 +112,14 @@ html, body {
     border-radius: 5px;
 }
 
-
+.bookWrap{
+    left: -10px;
+}
 
 /*** Ranking & Rank component***/
 .rankList{
     margin: 20px 0px;
-    border: 1px solid #000;
+    background-color: #fff;
 }
 
 .rank{

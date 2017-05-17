@@ -10,7 +10,7 @@ import Ranking from '../components/Ranking';
 class BestsellerList extends Component {
   render() {
     return (
-      <div className="bestsellerList row">
+      <div className="BestsellerList row">
         
         <div className="col-md-3"><Ranking /></div>
         <div className="bestsellers col-md-8">
