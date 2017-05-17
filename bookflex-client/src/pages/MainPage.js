@@ -14,9 +14,9 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div>
-        <BestsellerList />
-        <PostList />
+      <div className="row justify-content-center">
+        <BestsellerList className="BestsellerList col"/>
+        <PostList className="col"/>
         {/* must attach PostList and GenreList*/}
       </div>
     );
