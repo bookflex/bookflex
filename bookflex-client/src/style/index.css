@@ -1,6 +1,6 @@
 html, body {
-    height:100%;
-    width:100%;
+    /*height:100%;
+    width:100%;*/
     margin:0;
     padding:0;
     list-style: none;
@@ -118,14 +118,42 @@ html, body {
 
 /*** Ranking & Rank component***/
 .rankList{
+    padding: 20px 0px;
     margin: 20px 0px;
     background-color: #fff;
+    height: auto;
+    /*box-sizing: border-box;*/
 }
 
 .rank{
-    /*position: relative;*/
-    /*border: 1px solid powderblue;*/
+    position: relative;
+    margin:20px;
+}
 
+.rankRectangle{
+    /*position: relative;
+    width:20px;
+    height:20px;
+    background-color: blue;*/
+}
+
+.rankNumber{
+    position: absolute;
+    text-align: center;
+    width:20px;
+    height: 20px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.rankWhite{
+    background-color: pink !important;
+}
+
+.rankTitle{
+    position: relative;
+    left: 3rem;
 }
 
 
