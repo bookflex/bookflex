@@ -12,9 +12,8 @@ class PostList extends Component {
   }
 
   render() {
-    if (this.props.postlist == undefined) {
+    if (typeof(this.props.postlist) == 'undefined') {
       return <div>
-        <h2> postlist has not been loaded </h2>
       </div>
     }
     return (

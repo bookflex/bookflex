@@ -12,7 +12,7 @@ const history = createHistory();
 const middleware = routerMiddleware(history);
 
 import './style/index.css';
-import './style/post.css';
+
 import reducers from './reducers';
 
 import App from './router';
