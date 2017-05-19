@@ -19,9 +19,9 @@ class Ranking extends Component {
     return (
       <div className="rankList">
         <ol>
-          {this.props.bestsellerBookList.map((bestseller)=>{
+          {this.props.bestsellerBookList.slice(0,20).map((bestseller)=>{
             return(
-              <Rank key={bestseller.rank} bestseller={bestseller} />
+              <Rank className="rank rankBlack" key={bestseller.rank} bestseller={bestseller} />
             )
           })}
         </ol>

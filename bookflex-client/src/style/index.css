@@ -1,11 +1,11 @@
 html, body {
-    height:100%;
-    width:100%;
+    /*height:100%;
+    width:100%;*/
     margin:0;
     padding:0;
     list-style: none;
+    background-color: #e5e5e5;
 }
-
 
 /*** TabList and Tab component***/
 .tab {
@@ -65,20 +65,26 @@ html, body {
     background-color: white;
 }
 
+/*** BestSellerList Component ***/
+.BestsellerList{
+    position:relative;
+    top: 50px;
+}
 
 /*** BookList and Book component***/
 .book {
-    background-color: rgba(247,250,250,0.4);
+    /*background-color: rgba(247,250,250,0.4);*/
     margin: 20px 0px;
-    height: 400px;
+    height: 350px;
+    background-color: #fff;
 }
 
 .book .cover {
-    margin: 20px;
-    border: 1px solid ;
+    margin: 20px 0px;
+    /*border: 1px solid ;*/
     height: 100%;
     border-radius: 15px;
-    border-color: rgba(217,217,217,0.4);
+    /*border-color: rgba(217,217,217,0.4);*/
 }
 
 .book .description {
@@ -106,18 +112,48 @@ html, body {
     border-radius: 5px;
 }
 
-
+.bookWrap{
+    left: -10px;
+}
 
 /*** Ranking & Rank component***/
 .rankList{
+    padding: 20px 0px;
     margin: 20px 0px;
-    border: 1px solid #000;
+    background-color: #fff;
+    height: auto;
+    /*box-sizing: border-box;*/
 }
 
 .rank{
-    /*position: relative;*/
-    /*border: 1px solid powderblue;*/
+    position: relative;
+    margin:20px;
+}
 
+.rankRectangle{
+    /*position: relative;
+    width:20px;
+    height:20px;
+    background-color: blue;*/
+}
+
+.rankNumber{
+    position: absolute;
+    text-align: center;
+    width:20px;
+    height: 20px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.rankWhite{
+    background-color: pink !important;
+}
+
+.rankTitle{
+    position: relative;
+    left: 3rem;
 }
 
 
