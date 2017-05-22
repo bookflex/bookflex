@@ -8,7 +8,12 @@ import Book from './Book';
 import Ranking from '../components/Ranking';
 
 class BestsellerList extends Component {
+  constructor(props){
+    super(props);
+  }
+  
   render() {
+
     return (
       <div className="row justify-content-center BestsellerList">
         
@@ -16,7 +21,7 @@ class BestsellerList extends Component {
         <div className="bestsellers col-md-9">
           {this.props.bestsellerBookList.map((book, index) => {
             return (
-              <Book key={index} book={book}/>
+              <Book key={index} book={book} useKey={index}/>
             )})}
         </div>
       </div>
