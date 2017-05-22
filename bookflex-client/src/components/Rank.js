@@ -19,7 +19,7 @@ export default class Rank extends Component {
 
     return (
       <div className="rank">
-        <li><span className="rankRectangle"> </span><span className="rankNumber">{rank}</span><a className="rankTitle"href={link}>{title}</a></li>
+        <li><span className="rankRectangle"> </span><span className="rankNumber">{rank}</span><a className="rankTitle" target="_blank" href={link}>{title}</a></li>
       </div>
     );
   }
