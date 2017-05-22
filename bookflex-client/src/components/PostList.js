@@ -20,7 +20,7 @@ class PostList extends Component {
       <div className="main">
         {this.props.postlist.slice(0, 10).map((val, idx) => {
           return <Post key={val.postId} title={val.title} author={val.author} content={val.content}
-                       postImg={val.postImg} releasedDate={val.releasedDate}/>
+                       postImg={val.postImg} releasedDate={val.releasedDate} blogurl={val.blogurl}/>
         })}
       </div>
     )
