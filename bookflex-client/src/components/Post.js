@@ -10,7 +10,7 @@ class Post extends Component {
         return (
             <div className="posts">
             <div className="posts-left">
-                <a href={this.props.blogurl}><img className="post-img" src={this.props.postImg} alt="primary" /></a>
+                <a href={this.props.blogurl} target="_blank"><img className="post-img" src={this.props.postImg} alt="primary" /></a>
             </div>
             <div className="posts-right">
                 <div className="post-title">
