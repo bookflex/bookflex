@@ -74,9 +74,9 @@ html, body {
 /*** BookList and Book component***/
 .book {
     /*background-color: rgba(247,250,250,0.4);*/
-    margin: 20px 0px;
-    height: 350px;
-    background-color: #fff;
+    margin-bottom: 20px;
+    height: 200px;
+    /*background-color: #fff;*/
 }
 
 .book .cover {
@@ -100,6 +100,10 @@ html, body {
     text-align: center;
     font-weight: bold;
     overflow: hidden;
+    background-color: red;
+    position: relative;
+    /*width: 100%;
+    left: 50%;*/
 }
 
 .book .Img {
@@ -127,7 +131,7 @@ html, body {
 
 .rank{
     position: relative;
-    margin:20px;
+    margin:5px;
 }
 
 .rankRectangle{
@@ -168,10 +172,24 @@ html, body {
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }
 h1 { font-size: 1.5em; margin: 10px; }
-
-.rating {
+.book > .rating{
     border: none;
     float: left;
+    position: relative;
+    background-color: green;
+    top: -95px;
+    /*left: 40px;*/
+    display: block;
+}
+
+.book > .ratingNone{
+    border: none;
+    float: left;
+    position: relative;
+    background-color: green;
+    top: -95px;
+    /*left: 40px;*/
+    display: none;
 }
 
 .rating > input { display: none; }
@@ -202,7 +220,18 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 
+.stars{
+    position: relative;
+}
 
+.like{
+    position: relative;
+    background-color: blue;
+    float: left;
+    width: 100%;
+    height: 20px;
+
+}
 
 /*** PostList and Post component***/
 .posts {

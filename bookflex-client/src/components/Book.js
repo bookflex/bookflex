@@ -19,6 +19,17 @@ export default class Book extends Component {
     }));
   }
 
+  ratingVisible() {
+    debugger;
+    const rate = document.querySelector(".book > .ratingNone")
+    rate.className = "rating"
+  }
+
+  ratingNone() {
+    const rate = document.querySelector(".book > .rating")
+    rate.className = "ratingNone"
+  }
+
   render() {
     const {
       title, description, author,
@@ -28,7 +39,7 @@ export default class Book extends Component {
 
     return (
       <div className="book col-md-3">
-        <div className="bookWrapper" onClick={this.handleToggleClick}>
+        <div className="bookWrapper" onClick={this.handleToggleClick} onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone}>
           <div className="cover">
             <div className="Img">
               <img src={coverLargeUrl} className="bookImg"/>
@@ -48,7 +59,7 @@ export default class Book extends Component {
             </Modal>
           </div>
         </div>
-        <div className="rating">
+        <div className="ratingNone">
           <Rating bookId={isbn} bookTitle={title}/>
         </div>
       </div>
