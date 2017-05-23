@@ -65,7 +65,7 @@ ratingVisible(evt) {
             </Modal>
           </div>
         </div>
-        <div className="ratingNone">
+        <div className="ratingNone" onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone} onMouseUp={this.ratingVisible}>
           <Rating bookId={isbn} bookTitle={title}/>
         </div>
       </div>

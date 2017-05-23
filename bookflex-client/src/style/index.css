@@ -100,7 +100,8 @@ html, body {
     text-align: center;
     font-weight: bold;
     overflow: hidden;
-    background-color: red;
+    /*background-color: red;*/
+    border-bottom: 1px solid #F3F3F5;
     position: relative;
     display: block;
     overflow: hidden;
@@ -179,23 +180,13 @@ h1 { font-size: 1.5em; margin: 10px; }
     border: none;
     float: left;
     position: relative;
-    background-color: green;
-    top: -75px;
-    left: 15px;
-    display: block;
-    width: 200px;
-}
-.book > .rating{
-    border: none;
-    float: left;
-    position: relative;
-    background-color: green;
+    background-color: #fff;
     top: -95px;
-    /*left: 40px;*/
+    left: 13px;
     display: block;
-    width: 200px;
-    z-index: 10000;
+    width: 202px;
 }
+
 
 .book > .ratingNone{
     border: none;
@@ -237,11 +228,13 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 .stars{
     position: relative;
+    border-bottom: 1px solid #F3F3F5;
+    padding-right: 18%;
 }
 
 .like{
     position: relative;
-    background-color: blue;
+    /*background-color: blue;*/
     float: left;
     width: 100%;
     height: 20px;
