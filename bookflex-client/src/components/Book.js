@@ -29,7 +29,6 @@ ratingVisible(evt) {
   }
 
   ratingNone(evt) {
-    debugger;
     const rate = document.querySelector(".bestsellers");
     const target = rate.children[this.props.useKey].children[1];
     console.log(target);
@@ -46,10 +45,10 @@ ratingVisible(evt) {
 
     return (
       <div className="book col-md-3" >
-        <div className="bookWrapper" onClick={this.handleToggleClick} onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone}>
+        <div className="bookWrapper" onClick={this.handleToggleClick} onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone} onMouseUp={this.ratingVisible}>
           <div className="cover">
             <div className="Img">
-              <img src={coverLargeUrl} className="bookImg"/>
+              <img src={coverLargeUrl} className="bookImg"/> 
             </div>
             <Modal isClicked={this.state.showModal}>
               <div>

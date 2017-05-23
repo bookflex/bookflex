@@ -102,6 +102,10 @@ html, body {
     overflow: hidden;
     background-color: red;
     position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     /*width: 100%;
     left: 50%;*/
 }
@@ -163,7 +167,6 @@ html, body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-
 }
 
 
@@ -177,9 +180,21 @@ h1 { font-size: 1.5em; margin: 10px; }
     float: left;
     position: relative;
     background-color: green;
+    top: -75px;
+    left: 15px;
+    display: block;
+    width: 200px;
+}
+.book > .rating{
+    border: none;
+    float: left;
+    position: relative;
+    background-color: green;
     top: -95px;
     /*left: 40px;*/
     display: block;
+    width: 200px;
+    z-index: 10000;
 }
 
 .book > .ratingNone{
