@@ -16,12 +16,14 @@ function _promiseAll(){
                     let author = $('.info_lst > li > a').eq(0).text();
                     let releaseDate = $('.info_lst').children().last().text();
                     let content = $('#bookIntroSimple').text();
+                    let blogurl = $('#list').find('a').attr('href');
                     resolve({
                         imgurl,
                         title,
                         author,
                         releaseDate,
-                        content
+                        content,
+                        blogurl
                     });
             
                 }else{
@@ -36,7 +38,7 @@ function _promiseAll(){
 
 Promise.all( _promiseAll()).then((results)=>{
     console.log(results);
-    fs.appendFileSync('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
+    fs.writeFile('./JSON/bookinfo.json', JSON.stringify(results, null, 5));
 });
 
 

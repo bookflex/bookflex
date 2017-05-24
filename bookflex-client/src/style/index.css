@@ -1,54 +1,91 @@
-html, body {
-    height:100%;
-    width:100%;
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-
+html, body {
+    background-color: #e5e5e5;
+}
 
 /*** TabList and Tab component***/
 .tab {
     display: inline-block;
-    margin: 10px;
+    margin: 10px 25px 25px 25px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.tab:hover {
+    border-bottom: 5px solid red;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab a {
+    color: black;
+    text-decoration: none;
+}
+
+.tab a:hover {
+    color: #828282;
 }
 
 .tabList {
-    background-color: rgba(217,217,217,0.4);
+    position: fixed;
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    z-index: 99999;
+    margin-left: -20px;
+    margin-top: -20px;
+    border-bottom: 1px solid #c8c8c8;
 }
-
-
 
 /*** SearchBar component***/
 .searchBar {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 13px 0 0 350px;
     text-align: center;
     display: inline-block;
-    margin-left: 350px;
 }
 
 .searchBar input {
-    width: 300px;
-    border-radius: 5px;
+    width: 150px;
+    height: 10px;
+    padding: 6px 10px 6px 30px;
     line-height: 20px;
+    border-radius: 15px;
+    line-height: 20px;
+    font-size: 15px;
+    color: black;
+    box-sizing: content-box;
+    background-color: #c8c8c8;
 }
 
+.searchBar input:focus{
+    outline: none;
+    background-color: white;
+}
 
+/*** BestSellerList Component ***/
+.BestsellerList{
+    position:relative;
+    top: 50px;
+}
 
 /*** BookList and Book component***/
 .book {
-    background-color: rgba(247,250,250,0.4);
+    /*background-color: rgba(247,250,250,0.4);*/
     margin: 20px 0px;
-    height: 400px;
+    height: 350px;
+    background-color: #fff;
 }
 
 .book .cover {
-    margin: 20px;
-    border: 1px solid ;
+    margin: 20px 0px;
+    /*border: 1px solid ;*/
     height: 100%;
     border-radius: 15px;
-    border-color: rgba(217,217,217,0.4);
+    /*border-color: rgba(217,217,217,0.4);*/
 }
 
 .book .description {
@@ -76,20 +113,48 @@ html, body {
     border-radius: 5px;
 }
 
-
+.bookWrap{
+    left: -10px;
+}
 
 /*** Ranking & Rank component***/
 .rankList{
-    position: relative;
-    width: 300px;
-    height: 600px;
-    border: 1px solid #000;
+    padding: 20px 0px;
+    margin: 20px 0px;
+    background-color: #fff;
+    height: auto;
+    /*box-sizing: border-box;*/
 }
 
 .rank{
     position: relative;
-    border: 1px solid powderblue;
-    width: 100%;
+    margin:20px;
+}
+
+.rankRectangle{
+    /*position: relative;
+    width:20px;
+    height:20px;
+    background-color: blue;*/
+}
+
+.rankNumber{
+    position: absolute;
+    text-align: center;
+    width:20px;
+    height: 20px;
+    background-color: black;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.rankWhite{
+    background-color: pink !important;
+}
+
+.rankTitle{
+    position: relative;
+    left: 3rem;
 }
 
 
@@ -141,12 +206,14 @@ h1 { font-size: 1.5em; margin: 10px; }
     border: 0px solid black;
     float: left;
     margin: 2%;
+    box-shadow: 10px 10px 5px #888888;
     background-color: #FFFFFF;
 }
 
 .posts-left {
     height: 100%;
-    width: 30%;
+    width: 20%;
+    border: 3px outset;
     cursor: pointer;
     float: left;
 }
@@ -157,7 +224,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 .posts-right {
-    width: 68%;
+    width: 75%;
     height:100%;
     float: left;
     margin-left: 2%;
@@ -166,13 +233,23 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 .post-title {
     height: 15%;
-    margin: 2% 0;
-    color: #b0b0b6;
+    margin: 0% 0% 2% 0%;
+    font-weight: 900;
+    color: #6d6c83;
+    cursor: pointer;
+   
 }
 
 .post-description {
     height: 80%;
+    font-weight: 500;
+    font-size: 11px;
     color: #b0b0b6;
+    text-align: justify;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 

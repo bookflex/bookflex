@@ -20,25 +20,40 @@ connection.connect(function(error) {
     }
 });
 
-let blogQuery = "INSERT INTO Posts (title, author, content, postImg, releasedDate) VALUES ?";
-let data = bookInfo.map((val)=>{
+// let postQuery = "INSERT INTO Posts (title, author, content, postImg, releasedDate, blogurl) VALUES ?";
+let emptyArray = "TRUNCATE Posts"
+let postQuery = "REPLACE INTO Posts (title, author, content, postImg, releasedDate, blogurl) VALUES ? "
+
+let data = bookInfo.map((val, index)=>{
     let arr = [];
     arr.push(val.title);
     arr.push(val.author);
     arr.push(val.content);
     arr.push(val.imgurl);
     arr.push(val.releaseDate);
-    
-   
+    arr.push(val.blogurl);
+    console.log(arr);
     return arr;
 })
 
-connection.query(blogQuery, [data], function(err, rows) {
+connection.query(emptyArray, function(err,rows) {
+    if (err) {
+        console.log("error")
+
+         throw err;
+    }
+    console.log("emptied")
+})
+
+connection.query(postQuery, [data], function(err, rows) {
     if (err) {
       console.log("error")
+     
       throw err;
     } 
     console.log("Book title");
+     //console.log(data);
     })
 
+connection.end();
 

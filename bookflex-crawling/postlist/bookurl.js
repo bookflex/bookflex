@@ -17,7 +17,7 @@ request(url, function(error, response, body) {
                 json.push({bookurl});
             })
             if (json.bookurl != bookurl) {
-                fs.appendFileSync('./JSON/bookurl.json', JSON.stringify(json, null, 5)); 
+                fs.writeFile('./JSON/bookurl.json', JSON.stringify(json, null, 5)); 
             }     
          }
     })
