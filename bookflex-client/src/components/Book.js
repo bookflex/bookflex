@@ -11,6 +11,8 @@ export default class Book extends Component {
     super(props);
     this.state = {showModal: false};
     this.handleToggleClick = this.handleToggleClick.bind(this);
+    this.ratingNone = this.ratingNone.bind(this);
+    this.ratingVisible = this.ratingVisible.bind(this);
   }
 
   handleToggleClick() {
@@ -18,6 +20,19 @@ export default class Book extends Component {
       showModal: !prevState.showModal
     }));
   }
+
+ratingVisible(evt) {
+    const rate = document.querySelector(".bestsellers");
+    const target = rate.children[this.props.useKey].children[1];
+    target.className = "rating"
+  }
+
+  ratingNone(evt) {
+    const rate = document.querySelector(".bestsellers");
+    const target = rate.children[this.props.useKey].children[1];
+    target.className = "ratingNone"
+  }
+  
 
   render() {
     const {
@@ -27,11 +42,11 @@ export default class Book extends Component {
     } = this.props.book;
 
     return (
-      <div className="book col-md-3">
-        <div className="bookWrapper" onClick={this.handleToggleClick}>
+      <div className="book col-md-3" >
+        <div className="bookWrapper" onClick={this.handleToggleClick} onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone} onMouseUp={this.ratingVisible}>
           <div className="cover">
             <div className="Img">
-              <img src={coverLargeUrl} className="bookImg"/>
+              <img src={coverLargeUrl} className="bookImg"/> 
             </div>
             <Modal isClicked={this.state.showModal}>
               <div>
@@ -48,7 +63,7 @@ export default class Book extends Component {
             </Modal>
           </div>
         </div>
-        <div className="rating">
+        <div className="ratingNone" onMouseOver={this.ratingVisible} onMouseOut={this.ratingNone} onMouseUp={this.ratingVisible}>
           <Rating bookId={isbn} bookTitle={title}/>
         </div>
       </div>

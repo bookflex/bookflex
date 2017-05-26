@@ -75,9 +75,9 @@ html, body {
 /*** BookList and Book component***/
 .book {
     /*background-color: rgba(247,250,250,0.4);*/
-    margin: 20px 0px;
-    height: 350px;
-    background-color: #fff;
+    margin-bottom: 100px;
+    height: 200px;
+    /*background-color: #fff;*/
 }
 
 .book .cover {
@@ -101,6 +101,15 @@ html, body {
     text-align: center;
     font-weight: bold;
     overflow: hidden;
+    /*background-color: red;*/
+    border-bottom: 1px solid #F3F3F5;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*width: 100%;
+    left: 50%;*/
 }
 
 .book .Img {
@@ -109,7 +118,7 @@ html, body {
 
 .bookImg {
     width: 200px;
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
 }
 
@@ -120,7 +129,7 @@ html, body {
 /*** Ranking & Rank component***/
 .rankList{
     padding: 20px 0px;
-    margin: 20px 0px;
+    margin: 20px -10px 20px 20px;
     background-color: #fff;
     height: auto;
     /*box-sizing: border-box;*/
@@ -128,7 +137,8 @@ html, body {
 
 .rank{
     position: relative;
-    margin:20px;
+    /*margin:5px;*/
+    margin: 0px 20px;
 }
 
 .rankRectangle{
@@ -155,6 +165,11 @@ html, body {
 .rankTitle{
     position: relative;
     left: 3rem;
+    width: 250px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 
@@ -163,10 +178,26 @@ html, body {
 fieldset, label { margin: 0; padding: 0; }
 body{ margin: 20px; }
 h1 { font-size: 1.5em; margin: 10px; }
-
-.rating {
+.book > .rating{
     border: none;
     float: left;
+    position: relative;
+    background-color: #fff;
+    top: -95px;
+    left: 13px;
+    display: block;
+    width: 202px;
+}
+
+
+.book > .ratingNone{
+    border: none;
+    float: left;
+    position: relative;
+    background-color: green;
+    top: -95px;
+    /*left: 40px;*/
+    display: none;
 }
 
 .rating > input { display: none; }
@@ -197,15 +228,33 @@ h1 { font-size: 1.5em; margin: 10px; }
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
 
+.stars{
+    position: relative;
+    border-bottom: 1px solid #F3F3F5;
+    padding-right: 18%;
+}
 
+.like{
+    position: relative;
+    /*background-color: blue;*/
+    float: left;
+    width: 100%;
+    height: 20px;
+
+}
 
 /*** PostList and Post component***/
+.main{
+    position: relative;
+    top: 70px;
+}
+
 .posts {
     height: 100px;
     width: 45%;
     border: 0px solid black;
     float: left;
-    margin: 2%;
+    margin: 2% 35px 2% 20px;
     box-shadow: 10px 10px 5px #888888;
     background-color: #FFFFFF;
 }
