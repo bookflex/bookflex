@@ -1,9 +1,10 @@
-html, body {
-    /*height:100%;
-    width:100%;*/
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     list-style: none;
+}
+
+html, body {
     background-color: #e5e5e5;
 }
 
@@ -248,12 +249,14 @@ h1 { font-size: 1.5em; margin: 10px; }
     border: 0px solid black;
     float: left;
     margin: 2%;
+    box-shadow: 10px 10px 5px #888888;
     background-color: #FFFFFF;
 }
 
 .posts-left {
     height: 100%;
-    width: 30%;
+    width: 20%;
+    border: 3px outset;
     cursor: pointer;
     float: left;
 }
@@ -264,7 +267,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 .posts-right {
-    width: 68%;
+    width: 75%;
     height:100%;
     float: left;
     margin-left: 2%;
@@ -273,13 +276,23 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 .post-title {
     height: 15%;
-    margin: 2% 0;
-    color: #b0b0b6;
+    margin: 0% 0% 2% 0%;
+    font-weight: 900;
+    color: #6d6c83;
+    cursor: pointer;
+   
 }
 
 .post-description {
     height: 80%;
+    font-weight: 500;
+    font-size: 11px;
     color: #b0b0b6;
+    text-align: justify;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 

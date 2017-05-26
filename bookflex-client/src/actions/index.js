@@ -126,3 +126,9 @@ export function logoutUser(req, res) {
     res.redirect('/');
   }
 }
+
+// export function showModal () {
+//   return {
+//     type: 
+//   }
+// }

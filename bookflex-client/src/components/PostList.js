@@ -12,16 +12,15 @@ class PostList extends Component {
   }
 
   render() {
-    if (this.props.postlist == undefined) {
+    if (typeof(this.props.postlist) == 'undefined') {
       return <div>
-        <h2> postlist has not been loaded </h2>
       </div>
     }
     return (
       <div className="main">
         {this.props.postlist.slice(0, 10).map((val, idx) => {
           return <Post key={val.postId} title={val.title} author={val.author} content={val.content}
-                       postImg={val.postImg} releasedDate={val.releasedDate}/>
+                       postImg={val.postImg} releasedDate={val.releasedDate} blogurl={val.blogurl}/>
         })}
       </div>
     )

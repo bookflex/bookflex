@@ -10,14 +10,14 @@ function _promiseAll(){
         return new Promise((resolve, reject) => {
             request(newUrl, function(error, response, body) {
                 if (!error && response.statusCode == 200) {
+                    var bloglist = [];
                     let $ = cheerio.load(body);
-                    let blog = $('.ct').attr('href');
-                    // var bloglist = [];
-                    // for (let i = 0; i < blog.length; i++) {
-                    //     bloglist.push(blog(i).attr('href'));
-                    // }
+                    let blog = $('#list').find('a');
+                    blog.each(function() {
+                        bloglist.push($(this).attr('href'));
+                    })
                     resolve(
-                        blog
+                        bloglist
                     );
                 }else{
                     reject(error)
