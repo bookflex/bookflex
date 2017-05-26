@@ -75,7 +75,7 @@ html, body {
 /*** BookList and Book component***/
 .book {
     /*background-color: rgba(247,250,250,0.4);*/
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     height: 200px;
     /*background-color: #fff;*/
 }
@@ -118,7 +118,7 @@ html, body {
 
 .bookImg {
     width: 200px;
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
 }
 
@@ -129,7 +129,7 @@ html, body {
 /*** Ranking & Rank component***/
 .rankList{
     padding: 20px 0px;
-    margin: 20px 0px;
+    margin: 20px -10px 20px 20px;
     background-color: #fff;
     height: auto;
     /*box-sizing: border-box;*/
@@ -137,7 +137,8 @@ html, body {
 
 .rank{
     position: relative;
-    margin:5px;
+    /*margin:5px;*/
+    margin: 0px 20px;
 }
 
 .rankRectangle{
@@ -243,12 +244,17 @@ h1 { font-size: 1.5em; margin: 10px; }
 }
 
 /*** PostList and Post component***/
+.main{
+    position: relative;
+    top: 70px;
+}
+
 .posts {
     height: 100px;
     width: 45%;
     border: 0px solid black;
     float: left;
-    margin: 2%;
+    margin: 2% 35px 2% 20px;
     box-shadow: 10px 10px 5px #888888;
     background-color: #FFFFFF;
 }

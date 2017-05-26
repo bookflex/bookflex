@@ -19,7 +19,7 @@ class BestsellerList extends Component {
         
         <div className="col-md-3"><Ranking /></div>
         <div className="bestsellers col-md-9">
-          {this.props.bestsellerBookList.map((book, index) => {
+          {this.props.bestsellerBookList.slice(0,8).map((book, index) => {
             return (
               <Book key={index} book={book} useKey={index}/>
             )})}

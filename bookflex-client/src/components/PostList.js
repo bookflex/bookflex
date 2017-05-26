@@ -16,6 +16,7 @@ class PostList extends Component {
       return <div>
       </div>
     }
+
     return (
       <div className="main">
         {this.props.postlist.slice(0, 10).map((val, idx) => {

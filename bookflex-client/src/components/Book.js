@@ -24,14 +24,12 @@ export default class Book extends Component {
 ratingVisible(evt) {
     const rate = document.querySelector(".bestsellers");
     const target = rate.children[this.props.useKey].children[1];
-    console.log(target);
     target.className = "rating"
   }
 
   ratingNone(evt) {
     const rate = document.querySelector(".bestsellers");
     const target = rate.children[this.props.useKey].children[1];
-    console.log(target);
     target.className = "ratingNone"
   }
   
