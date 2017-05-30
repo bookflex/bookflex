@@ -3,6 +3,8 @@ import passport from 'passport';
 
 import model from '../model'
 
+require('../passport/index')();
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -32,31 +34,53 @@ router.get('/posts', (req, res, next) => {
 });
 
 router.post('/books/stars', (req, res, next) => {
-  const { bookId, starPoint } = req.body;
+  const {bookId, starPoint} = req.body;
   model.insertEachBookStarPoint(bookId, starPoint).then(() => res.send(true));
 });
 
 router.post('/register/user', (req, res, next) => {
-  const { email, password } = req.body;
+  const {email, password} = req.body;
   model.insertNewUser(email, password).then(() => res.send(true));
 });
 
-router.get('/confirm/user', (req, res, next) => {
-  console.log("model");
-  console.log(req.query);
-  const { user, password } = req.query;
-  model.getUser(user, password)
-    .then(function (rows) {
-      if(rows) {
-        res.redirect('/');
-      } else {
-        res.render('login');
+router
+  .get('/login/user', (req, res, next) => {
+    console.log("model");
+    console.log(req.query);
+    const {user, password} = req.query;
+    model.getUser(user, password)
+      .then(function (rows) {
+        res.send(rows);
+      })
+      .catch(function (errors) {
+        res.send(errors);
+      })
+  })
+  .post('/login', function (req, res, next) {
+    passport.authenticate('/login', function (err, user, info) {
+      if (err) res.status(500).json(err);
+      if (!user) {
+        return res.status(400).json(info.message);
       }
-      res.send(rows);
-    })
-    .catch(function (errors) {
-      res.send(errors);
-    })
+      req.logIn(user, function (err) {
+        if (err) {
+          return next(err);
+        }
+        let info = {
+          email: user.email,
+          id: user.id
+        }
+        console.log(info);
+        return res.json(info);
+      });
+
+    })(req, res, next);
+  });
+
+router.get('/logout/user', (req, res) => {
+  req.session.destroy();
+  res.clearCookie('bookflex');
+  res.redirect('/');
 });
 
 export default router;

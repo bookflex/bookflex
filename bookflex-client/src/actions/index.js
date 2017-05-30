@@ -107,22 +107,19 @@ export function registerUser(email, password) {
   };
 }
 
-export function confirmUser(email, password) {
+export function loginUser(email, password) {
   return (dispatch, getState) => {
     const user = {email, password};
 
-    fetch(`http://localhost:3001/confirm/user?user=${email}&password=${password}`)
-      .then(response => response.json())
+    fetch(`http://localhost:3001/login/user?user=${email}&password=${password}`)
       .then(json => {
         console.log("my json", json);
       })
   };
 }
 
-export function logoutUser(req, res) {
+export function logoutUser(email, password) {
   return (dispatch, getState) => {
-    req.session.destroy();
-    res.clearCookie('bookflex');
-    res.redirect('/');
-  }
+
+  };
 }

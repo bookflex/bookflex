@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import { registerUser, confirmUser } from '../actions';
+import { registerUser, loginUser } from '../actions';
 
 class Login extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Login extends Component {
     if(!email || !password) {
       //redirect login
     }
-    this.props.confirmUser(email, password);
+    this.props.loginUser(email, password);
   }
   onClickRegister() {
     const { email, password } = this.state;
@@ -63,8 +63,8 @@ function mapDispatchToProps(dispatch) {
     registerUser: (email, password) => {
       dispatch(registerUser(email, password));
     },
-    confirmUser: (email, password) => {
-      dispatch(confirmUser(email, password));
+    loginUser: (email, password) => {
+      dispatch(loginUser(email, password));
     }
   };
 }
