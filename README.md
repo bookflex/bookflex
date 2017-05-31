@@ -12,16 +12,16 @@ git clone https://github.com/bookflex/bookflex/
 ### client 실행하기 
 웹페이지는 server에서 구동하기 위해 build를 실행시키는 명령어. client를 option 명령어와 같이 별도 실행할 수 있다.
 ```
-cd ./bookflex/bookflex-client 
-npm run build 
-(option) nodemon index.js --exec ./node_modules/.bin/babel-node  
+cd ./bookflex/bookflex-server
+npm start
 ```
  
 ### server 실행하기
 node express를 실행하는 명령어.
 ```
-cd ./bookflex/bookflex-server
-npm start
+cd ./bookflex/bookflex-client 
+npm run build 
+(option) nodemon index.js --exec ./node_modules/.bin/babel-node  
 ```
 
 ### crawling 실행하기
@@ -48,5 +48,4 @@ cd ./bookflex/bookflex-crawling/postlit
 - gyum - initial worker - [github profile]()
 
 ## Licensing
-This project is licensed under Unlicense license. This license does not require
-you to take the license with you to your project.
+MIT
